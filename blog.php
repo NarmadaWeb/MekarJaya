@@ -12,13 +12,13 @@ $posts = get_all_blog_posts($pdo);
         <div class="grid grid-3">
             <?php foreach ($posts as $post): ?>
             <article class="card" style="padding: 0; overflow: hidden;">
-                <img src="<?php echo e($post['image']); ?>" alt="<?php echo e($post['title']); ?>" style="width: 100%; height: 200px; object-fit: cover;">
+                <img src="<?php echo e($post['gambar']); ?>" alt="<?php echo e($post['judul']); ?>" style="width: 100%; height: 200px; object-fit: cover;">
                 <div style="padding: 24px;">
                     <div style="font-size: 12px; font-weight: 700; color: var(--secondary); margin-bottom: 8px; text-transform: uppercase;">
-                        <?php echo e($post['category']); ?> • <?php echo e(date('M d, Y', strtotime($post['created_at']))); ?>
+                        <?php echo e($post['kategori']); ?> • <?php echo e(date('M d, Y', strtotime($post['dibuat_pada']))); ?>
                     </div>
-                    <h3 style="margin-bottom: 12px;"><?php echo e($post['title']); ?></h3>
-                    <p style="color: var(--on-surface-variant); font-size: 14px; margin-bottom: 16px;"><?php echo e($post['excerpt']); ?></p>
+                    <h3 style="margin-bottom: 12px;"><?php echo e($post['judul']); ?></h3>
+                    <p style="color: var(--on-surface-variant); font-size: 14px; margin-bottom: 16px;"><?php echo e($post['kutipan']); ?></p>
                     <a href="#" style="color: var(--primary); font-weight: 700; font-size: 14px;">Read More →</a>
                 </div>
             </article>

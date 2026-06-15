@@ -1,5 +1,3 @@
-DROP TABLE IF EXISTS notifikasi;
-DROP TABLE IF EXISTS kategori;
 DROP TABLE IF EXISTS faq;
 DROP TABLE IF EXISTS artikel;
 DROP TABLE IF EXISTS detail_pesanan;

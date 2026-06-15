@@ -1,9 +1,9 @@
 <?php
 // MySQL Database Configuration (Preferred)
 $mysql_host = getenv('MYSQL_HOST') ?: 'localhost';
-$mysql_db   = getenv('MYSQL_DATABASE') ?: 'madu_batu_meka';
+$mysql_db   = getenv('MYSQL_DATABASE') ?: 'madu';
 $mysql_user = getenv('MYSQL_USER') ?: 'root';
-$mysql_pass = getenv('MYSQL_PASSWORD') ?: '';
+$mysql_pass = getenv('MYSQL_PASSWORD') ?: 'root';
 
 // SQLite Database Path (Fallback for Sandbox)
 $sqlite_path = __DIR__ . '/../data/database.sqlite';
@@ -19,6 +19,7 @@ try {
 
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+
 } catch (PDOException $e) {
     // If MySQL failed, try SQLite directly as last resort
     try {

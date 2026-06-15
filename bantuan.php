@@ -24,8 +24,8 @@ $faqs_by_cat = get_faqs_by_category($pdo);
                     <h3 style="font-size: 32px; border-bottom: 2px solid var(--primary-container); padding-bottom: 12px; margin-bottom: 24px; color: var(--primary);"><?php echo e($cat); ?></h3>
                     <?php foreach ($faqs as $faq): ?>
                     <div class="card" style="margin-bottom: 16px;">
-                        <h4 style="margin-bottom: 12px; color: var(--on-surface);"><?php echo e($faq['question']); ?></h4>
-                        <p style="color: var(--on-surface-variant);"><?php echo e($faq['answer']); ?></p>
+                        <h4 style="margin-bottom: 12px; color: var(--on-surface);"><?php echo e($faq['pertanyaan']); ?></h4>
+                        <p style="color: var(--on-surface-variant);"><?php echo e($faq['jawaban']); ?></p>
                     </div>
                     <?php endforeach; ?>
                 </section>

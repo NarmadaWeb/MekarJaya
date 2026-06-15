@@ -20,7 +20,8 @@ function require_login() {
         session_start();
     }
     if (!isset($_SESSION['user_id'])) {
-        header("Location: /index.php");
+        $prefix = (str_starts_with($_SERVER['PHP_SELF'], '/account/') || str_starts_with($_SERVER['PHP_SELF'], '/admin/') || str_starts_with($_SERVER['PHP_SELF'], '/reseller/')) ? '../' : '';
+        header("Location: " . $prefix . "login.php");
         exit;
     }
 }
@@ -33,37 +34,38 @@ function require_admin() {
         session_start();
     }
     if (!isset($_SESSION['user_role']) || $_SESSION['user_role'] !== 'admin') {
-        header("Location: /index.php");
+        $prefix = (str_starts_with($_SERVER['PHP_SELF'], '/account/') || str_starts_with($_SERVER['PHP_SELF'], '/admin/') || str_starts_with($_SERVER['PHP_SELF'], '/reseller/')) ? '../' : '';
+        header("Location: " . $prefix . "login.php");
         exit;
     }
 }
 
 function get_all_products($pdo) {
-    $stmt = $pdo->query("SELECT * FROM products");
+    $stmt = $pdo->query("SELECT * FROM produk");
     return $stmt->fetchAll();
 }
 
 function get_featured_products($pdo) {
-    $stmt = $pdo->query("SELECT * FROM products WHERE is_featured = 1");
+    $stmt = $pdo->query("SELECT * FROM produk WHERE unggulan = 1");
     return $stmt->fetchAll();
 }
 
 function get_product_by_id($pdo, $id) {
-    $stmt = $pdo->prepare("SELECT * FROM products WHERE id = ?");
+    $stmt = $pdo->prepare("SELECT * FROM produk WHERE produk_id = ?");
     $stmt->execute([$id]);
     return $stmt->fetch();
 }
 
 function get_faqs_by_category($pdo) {
-    $faqs = $pdo->query("SELECT * FROM faqs")->fetchAll();
+    $faqs = $pdo->query("SELECT * FROM faq")->fetchAll();
     $grouped = [];
     foreach ($faqs as $faq) {
-        $grouped[$faq['category']][] = $faq;
+        $grouped[$faq['kategori']][] = $faq;
     }
     return $grouped;
 }
 
 function get_all_blog_posts($pdo) {
-    return $pdo->query("SELECT * FROM blog_posts ORDER BY created_at DESC")->fetchAll();
+    return $pdo->query("SELECT * FROM artikel ORDER BY dibuat_pada DESC")->fetchAll();
 }
 ?>

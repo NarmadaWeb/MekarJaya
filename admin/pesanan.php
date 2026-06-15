@@ -1,0 +1,316 @@
+<?php
+require_once __DIR__ . '/../includes/functions.php';
+require_once __DIR__ . '/../config/db.php';
+require_admin();
+
+// Auto-create notifikasi table if not exists
+try {
+    $pdo->exec("CREATE TABLE IF NOT EXISTS notifikasi (
+        notifikasi_id INTEGER PRIMARY KEY AUTOINCREMENT,
+        pesanan_id INTEGER DEFAULT NULL,
+        judul TEXT NOT NULL,
+        pesan TEXT DEFAULT NULL,
+        dibaca INTEGER DEFAULT 0,
+        dibuat_pada TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY (pesanan_id) REFERENCES pesanan(pesanan_id) ON DELETE SET NULL
+    )");
+} catch (PDOException $e) {
+    // ignore
+}
+
+$msg = '';
+$error = '';
+
+// Handle status updates
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
+    if ($_POST['action'] === 'update_status') {
+        $order_id = (int)$_POST['order_id'];
+        $new_status = trim($_POST['status'] ?? '');
+        if (in_array($new_status, ['Pending', 'Processed', 'Shipped', 'Completed'])) {
+            try {
+                $stmt = $pdo->prepare("UPDATE pesanan SET status = ? WHERE pesanan_id = ?");
+                $stmt->execute([$new_status, $order_id]);
+                $msg = "Status pesanan #MBM-{$order_id} berhasil diperbarui.";
+            } catch (PDOException $e) {
+                $error = "Gagal memperbarui status: " . $e->getMessage();
+            }
+        }
+    }
+}
+
+// Filters
+$status_filter = $_GET['status'] ?? '';
+$search = trim($_GET['search'] ?? '');
+
+$sql = "SELECT pesanan.*, pengguna.nama as user_name, pengguna.email as user_email, pengguna.telepon as user_phone FROM pesanan JOIN pengguna ON pesanan.pengguna_id = pengguna.pengguna_id";
+$conditions = [];
+$params = [];
+
+if ($status_filter) {
+    $conditions[] = "pesanan.status = ?";
+    $params[] = $status_filter;
+}
+if ($search) {
+    $conditions[] = "(pengguna.nama LIKE ? OR pesanan.pesanan_id LIKE ?)";
+    $params[] = "%{$search}%";
+    $params[] = "%{$search}%";
+}
+
+if (!empty($conditions)) {
+    $sql .= " WHERE " . implode(" AND ", $conditions);
+}
+$sql .= " ORDER BY pesanan.dibuat_pada DESC";
+
+$stmt = $pdo->prepare($sql);
+$stmt->execute($params);
+$orders = $stmt->fetchAll();
+
+// Get order items for each order
+$orders_with_items = [];
+foreach ($orders as $order) {
+    $stmt_items = $pdo->prepare("
+        SELECT oi.*, p.nama as product_name, p.gambar as product_image
+        FROM detail_pesanan oi
+        JOIN produk p ON oi.produk_id = p.produk_id
+        WHERE oi.pesanan_id = ?
+    ");
+    $stmt_items->execute([$order['pesanan_id']]);
+    $order['items'] = $stmt_items->fetchAll();
+    $orders_with_items[] = $order;
+}
+$orders = $orders_with_items;
+
+// Stats
+$total_orders = $pdo->query("SELECT COUNT(*) FROM pesanan")->fetchColumn();
+$pending_count = $pdo->query("SELECT COUNT(*) FROM pesanan WHERE status = 'Pending'")->fetchColumn();
+$processed_count = $pdo->query("SELECT COUNT(*) FROM pesanan WHERE status = 'Processed'")->fetchColumn();
+$completed_count = $pdo->query("SELECT COUNT(*) FROM pesanan WHERE status = 'Completed'")->fetchColumn();
+$total_revenue = $pdo->query("SELECT COALESCE(SUM(total_harga), 0) FROM pesanan WHERE status = 'Completed'")->fetchColumn();
+
+$page_title = 'Manajemen Pesanan';
+require_once __DIR__ . '/../includes/header.php';
+?>
+<main style="padding: 48px 0; background: var(--background); font-family: 'Inter', sans-serif;">
+    <div class="container" style="display: flex; gap: 48px; align-items: flex-start;">
+        <aside style="width: 250px; flex-shrink: 0;">
+            <nav class="sidebar-nav">
+                <a href="dashboard.php" class="sidebar-link">
+                    <span class="material-symbols-outlined">dashboard</span>
+                    Overview Admin
+                </a>
+                <a href="produk.php" class="sidebar-link">
+                    <span class="material-symbols-outlined">inventory_2</span>
+                    Produk
+                </a>
+                <a href="kategori.php" class="sidebar-link">
+                    <span class="material-symbols-outlined">category</span>
+                    Kategori
+                </a>
+                <a href="pesanan.php" class="sidebar-link active">
+                    <span class="material-symbols-outlined">receipt_long</span>
+                    Pesanan
+                </a>
+                <a href="../katalog.php" class="sidebar-link">
+                    <span class="material-symbols-outlined">storefront</span>
+                    Lihat Toko
+                </a>
+                <a href="../logout.php" class="sidebar-link" style="color: var(--error) !important;">
+                    <span class="material-symbols-outlined" style="color: var(--error) !important;">logout</span>
+                    Keluar
+                </a>
+            </nav>
+        </aside>
+
+        <section style="flex-grow: 1;">
+            <h1 style="font-size: 32px; margin-bottom: 32px; color: var(--secondary); font-weight: 800;">Manajemen Pesanan</h1>
+
+            <?php if ($msg): ?>
+                <div class="alert alert-success" style="margin-bottom: 24px; padding: 12px 20px; border-radius: 8px; background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; display: flex; align-items: center; gap: 10px;">
+                    <span class="material-symbols-outlined" style="font-size: 20px;">check_circle</span>
+                    <div><?php echo e($msg); ?></div>
+                </div>
+            <?php endif; ?>
+            <?php if ($error): ?>
+                <div class="alert alert-danger" style="margin-bottom: 24px; padding: 12px 20px; border-radius: 8px; background: #fef2f2; color: #991b1b; border: 1px solid #fca5a5; display: flex; align-items: center; gap: 10px;">
+                    <span class="material-symbols-outlined" style="font-size: 20px;">error</span>
+                    <div><?php echo e($error); ?></div>
+                </div>
+            <?php endif; ?>
+
+            <!-- Stats -->
+            <div class="grid grid-4" style="margin-bottom: 32px; gap: 16px;">
+                <div class="card" style="padding: 20px; display: flex; align-items: center; gap: 16px;">
+                    <div style="background: #eff6ff; color: #2563eb; width: 48px; height: 48px; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                        <span class="material-symbols-outlined" style="font-size: 24px;">receipt_long</span>
+                    </div>
+                    <div>
+                        <div style="font-size: 11px; font-weight: 700; color: #64748b; text-transform: uppercase;">Total</div>
+                        <div style="font-size: 22px; font-weight: 800; color: var(--primary);"><?php echo e($total_orders); ?></div>
+                    </div>
+                </div>
+                <div class="card" style="padding: 20px; display: flex; align-items: center; gap: 16px;">
+                    <div style="background: #fffbeb; color: #d97706; width: 48px; height: 48px; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                        <span class="material-symbols-outlined" style="font-size: 24px;">hourglass_empty</span>
+                    </div>
+                    <div>
+                        <div style="font-size: 11px; font-weight: 700; color: #64748b; text-transform: uppercase;">Pending</div>
+                        <div style="font-size: 22px; font-weight: 800; color: #d97706;"><?php echo e($pending_count); ?></div>
+                    </div>
+                </div>
+                <div class="card" style="padding: 20px; display: flex; align-items: center; gap: 16px;">
+                    <div style="background: #e0f2fe; color: #0369a1; width: 48px; height: 48px; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                        <span class="material-symbols-outlined" style="font-size: 24px;">local_shipping</span>
+                    </div>
+                    <div>
+                        <div style="font-size: 11px; font-weight: 700; color: #64748b; text-transform: uppercase;">Diproses</div>
+                        <div style="font-size: 22px; font-weight: 800; color: #0369a1;"><?php echo e($processed_count); ?></div>
+                    </div>
+                </div>
+                <div class="card" style="padding: 20px; display: flex; align-items: center; gap: 16px;">
+                    <div style="background: #ecfdf5; color: #059669; width: 48px; height: 48px; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                        <span class="material-symbols-outlined" style="font-size: 24px;">payments</span>
+                    </div>
+                    <div>
+                        <div style="font-size: 11px; font-weight: 700; color: #64748b; text-transform: uppercase;">Pendapatan</div>
+                        <div style="font-size: 22px; font-weight: 800; color: #059669;"><?php echo e(format_rupiah($total_revenue)); ?></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filter & Search -->
+            <div class="card" style="padding: 20px 24px; margin-bottom: 24px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;">
+                <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                    <a href="pesanan.php" class="btn <?php echo !$status_filter ? 'btn-primary' : 'btn-secondary'; ?>" style="padding: 8px 16px; font-size: 13px; text-decoration: none; border-radius: 8px;">Semua</a>
+                    <a href="pesanan.php?status=Pending" class="btn <?php echo $status_filter === 'Pending' ? 'btn-primary' : 'btn-secondary'; ?>" style="padding: 8px 16px; font-size: 13px; text-decoration: none; border-radius: 8px;">Pending</a>
+                    <a href="pesanan.php?status=Processed" class="btn <?php echo $status_filter === 'Processed' ? 'btn-primary' : 'btn-secondary'; ?>" style="padding: 8px 16px; font-size: 13px; text-decoration: none; border-radius: 8px;">Diproses</a>
+                    <a href="pesanan.php?status=Shipped" class="btn <?php echo $status_filter === 'Shipped' ? 'btn-primary' : 'btn-secondary'; ?>" style="padding: 8px 16px; font-size: 13px; text-decoration: none; border-radius: 8px;">Dikirim</a>
+                    <a href="pesanan.php?status=Completed" class="btn <?php echo $status_filter === 'Completed' ? 'btn-primary' : 'btn-secondary'; ?>" style="padding: 8px 16px; font-size: 13px; text-decoration: none; border-radius: 8px;">Selesai</a>
+                </div>
+                <form action="pesanan.php" method="GET" style="display: flex; gap: 8px;">
+                    <?php if ($status_filter): ?>
+                        <input type="hidden" name="status" value="<?php echo e($status_filter); ?>">
+                    <?php endif; ?>
+                    <input type="text" name="search" class="form-control" style="width: 200px; padding: 8px 14px; font-size: 13px;" placeholder="Cari pelanggan..." value="<?php echo e($search); ?>">
+                    <button type="submit" class="btn btn-primary" style="padding: 8px 16px; font-size: 13px; border-radius: 8px;">
+                        <span class="material-symbols-outlined" style="font-size: 16px;">search</span>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Orders List -->
+            <div style="display: flex; flex-direction: column; gap: 16px;">
+                <?php if (empty($orders)): ?>
+                    <div class="card" style="text-align: center; padding: 48px;">
+                        <span class="material-symbols-outlined" style="font-size: 64px; color: var(--outline); margin-bottom: 16px;">receipt_long</span>
+                        <h2 style="font-size: 20px; color: var(--secondary); margin-bottom: 8px;">Tidak Ada Pesanan</h2>
+                        <p style="color: var(--on-surface-variant);">Belum ada pesanan yang masuk.</p>
+                    </div>
+                <?php else: ?>
+                    <?php foreach ($orders as $order): ?>
+                    <?php
+                        $status_class = 'badge-pending';
+                        $status_text = 'Menunggu Pembayaran';
+                        $s = strtolower($order['status'] ?? 'pending');
+                        if ($s === 'completed') {
+                            $status_class = 'badge-completed';
+                            $status_text = 'Selesai';
+                        } elseif ($s === 'shipped') {
+                            $status_class = 'badge-shipped';
+                            $status_text = 'Dikirim';
+                        } elseif ($s === 'processed') {
+                            $status_class = 'badge-processed';
+                            $status_text = 'Diproses';
+                        }
+                    ?>
+                    <div class="order-card" style="border-radius: 16px; background: white; border: 1px solid rgba(0,0,0,0.05); overflow: hidden;">
+                        <div class="order-header" style="background: #f8fafc; padding: 18px 24px; border-bottom: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+                            <div style="display: flex; align-items: center; gap: 16px;">
+                                <div>
+                                    <span style="font-size: 11px; color: #64748b; text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px;">ID Pesanan</span>
+                                    <div style="font-weight: 800; font-size: 16px; color: var(--primary); margin-top: 2px;">#MBM-<?php echo e($order['pesanan_id']); ?></div>
+                                </div>
+                                <span class="badge <?php echo $status_class; ?>"><?php echo $status_text; ?></span>
+                            </div>
+                            <div style="text-align: right;">
+                                <span style="font-size: 11px; color: #64748b; text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px;">Tanggal</span>
+                                <div style="font-weight: 600; font-size: 14px; color: #334155; margin-top: 2px;"><?php echo e(date('d M Y, H:i', strtotime($order['dibuat_pada']))); ?></div>
+                            </div>
+                        </div>
+
+                        <div class="order-body" style="padding: 24px;">
+                            <!-- Customer Info -->
+                            <div style="display: flex; gap: 24px; flex-wrap: wrap; margin-bottom: 20px;">
+                                <div style="flex: 1; min-width: 200px;">
+                                    <div style="font-size: 12px; color: var(--secondary); font-weight: 700; text-transform: uppercase; margin-bottom: 8px; letter-spacing: 0.5px;">Data Pelanggan</div>
+                                    <div style="font-size: 14px; color: var(--on-surface-variant); line-height: 1.8;">
+                                        <strong>Nama:</strong> <?php echo e($order['user_name']); ?><br>
+                                        <strong>Email:</strong> <?php echo e($order['user_email']); ?><br>
+                                        <strong>Telepon:</strong> <?php echo e($order['user_phone'] ?: '-'); ?>
+                                    </div>
+                                </div>
+                                <div style="flex: 1; min-width: 200px;">
+                                    <div style="font-size: 12px; color: var(--secondary); font-weight: 700; text-transform: uppercase; margin-bottom: 8px; letter-spacing: 0.5px;">Detail Pengiriman</div>
+                                    <div style="font-size: 14px; color: var(--on-surface-variant); line-height: 1.8;">
+                                        <strong>Alamat:</strong> <?php echo e($order['alamat_pengiriman']); ?><br>
+                                        <strong>Metode Kirim:</strong> <?php echo e($order['metode_pengiriman']); ?><br>
+                                        <strong>Pembayaran:</strong> <?php echo e($order['metode_pembayaran']); ?>
+                                    </div>
+                                </div>
+                                <div style="min-width: 180px; text-align: right;">
+                                    <div style="font-size: 12px; color: var(--secondary); font-weight: 700; text-transform: uppercase; margin-bottom: 8px; letter-spacing: 0.5px;">Total</div>
+                                    <div style="font-size: 24px; font-weight: 800; color: var(--primary);"><?php echo e(format_rupiah($order['total_harga'])); ?></div>
+                                </div>
+                            </div>
+
+                            <!-- Items -->
+                            <?php if (!empty($order['items'])): ?>
+                            <div style="border-top: 1px solid #e2e8f0; padding-top: 16px; margin-bottom: 16px;">
+                                <div style="font-size: 12px; color: var(--secondary); font-weight: 700; text-transform: uppercase; margin-bottom: 12px; letter-spacing: 0.5px;">Item Pesanan</div>
+                                <?php foreach ($order['items'] as $item): ?>
+                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #f1f5f9;">
+                                    <div style="display: flex; align-items: center; gap: 12px;">
+                                        <?php if (!empty($item['product_image'])): ?>
+                                            <img src="<?php echo e($item['product_image']); ?>" alt="<?php echo e($item['product_name']); ?>" style="width: 40px; height: 40px; object-fit: cover; border-radius: 6px; border: 1px solid #e2e8f0;">
+                                        <?php endif; ?>
+                                        <div>
+                                            <div style="font-weight: 600; color: #334155; font-size: 14px;"><?php echo e($item['product_name']); ?></div>
+                                            <div style="font-size: 12px; color: #94a3b8;"><?php echo e($item['jumlah']); ?> x <?php echo e(format_rupiah($item['harga'])); ?></div>
+                                        </div>
+                                    </div>
+                                    <div style="font-weight: 700; color: var(--secondary); font-size: 14px;">
+                                        <?php echo e(format_rupiah($item['jumlah'] * $item['harga'])); ?>
+                                    </div>
+                                </div>
+                                <?php endforeach; ?>
+                            </div>
+                            <?php endif; ?>
+
+                            <!-- Action: Update Status -->
+                            <div style="border-top: 1px solid #e2e8f0; padding-top: 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+                                <form action="pesanan.php" method="POST" style="display: flex; align-items: center; gap: 8px; margin: 0;">
+                                    <input type="hidden" name="action" value="update_status">
+                                    <input type="hidden" name="order_id" value="<?php echo $order['pesanan_id']; ?>">
+                                    <span style="font-size: 12px; font-weight: 600; color: #64748b;">Ubah Status:</span>
+                                    <select name="status" onchange="this.form.submit()" style="padding: 8px 14px; border-radius: 8px; font-size: 13px; font-weight: 600; border: 1px solid #cbd5e1; cursor: pointer; outline: none;">
+                                        <option value="Pending" <?php if ($s === 'pending') echo 'selected'; ?>>Menunggu Pembayaran</option>
+                                        <option value="Processed" <?php if ($s === 'processed') echo 'selected'; ?>>Diproses</option>
+                                        <option value="Shipped" <?php if ($s === 'shipped') echo 'selected'; ?>>Dikirim</option>
+                                        <option value="Completed" <?php if ($s === 'completed') echo 'selected'; ?>>Selesai</option>
+                                    </select>
+                                </form>
+
+                                <?php if ($order['bukti_pembayaran']): ?>
+                                    <a href="<?php echo e($order['bukti_pembayaran']); ?>" target="_blank" class="btn" style="padding: 8px 14px; font-size: 12px; background: #f1f5f9; color: #334155; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 6px;">
+                                        <span class="material-symbols-outlined" style="font-size: 16px;">image</span> Lihat Bukti Bayar
+                                    </a>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                    </div>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+            </div>
+        </section>
+    </div>
+</main>
+<?php require_once __DIR__ . '/../includes/footer.php'; ?>

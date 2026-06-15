@@ -10,7 +10,7 @@ if (!$product) {
     exit;
 }
 
-$page_title = $product['name'];
+$page_title = $product['nama'];
 require_once 'includes/header.php';
 ?>
 
@@ -18,22 +18,22 @@ require_once 'includes/header.php';
     <div class="container">
         <div class="grid grid-2" style="align-items: start; gap: 80px;">
             <div>
-                <img src="<?php echo e($product['image']); ?>" alt="<?php echo e($product['name']); ?>" class="product-img-large">
+                <img src="<?php echo e($product['gambar']); ?>" alt="<?php echo e($product['nama']); ?>" class="product-img-large">
             </div>
             <div>
-                <h1 class="text-primary" style="font-size: 48px; margin-bottom: 16px;"><?php echo e($product['name']); ?></h1>
+                <h1 class="text-primary" style="font-size: 48px; margin-bottom: 16px;"><?php echo e($product['nama']); ?></h1>
                 <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 24px;">
                     <span class="text-primary" style="font-weight: 600;">(<?php echo e($product['rating']); ?>/5)</span>
-                    <span class="text-on-surface-variant">• <?php echo e($product['review_count']); ?> Review</span>
+                    <span class="text-on-surface-variant">• <?php echo e($product['jumlah_ulasan']); ?> Review</span>
                 </div>
                 <div class="card" style="margin-bottom: 32px; background: var(--surface-variant);">
-                    <div class="text-primary font-display" style="font-size: 32px; font-weight: 700;"><?php echo e(format_rupiah($product['price'])); ?></div>
+                    <div class="text-primary font-display" style="font-size: 32px; font-weight: 700;"><?php echo e(format_rupiah($product['harga'])); ?></div>
                 </div>
 
                 <div style="display: flex; flex-direction: column; gap: 16px;">
                     <form action="keranjang.php" method="POST">
                         <input type="hidden" name="action" value="add">
-                        <input type="hidden" name="product_id" value="<?php echo e($product['id']); ?>">
+                        <input type="hidden" name="product_id" value="<?php echo e($product['produk_id']); ?>">
                         <button type="submit" class="btn btn-primary" style="width: 100%; padding: 16px;">Tambah ke Keranjang</button>
                     </form>
                     <a href="https://wa.me/6281234567890" target="_blank" class="btn btn-secondary" style="background: #25D366; border: none; color: white;">Chat via WhatsApp</a>
@@ -41,7 +41,7 @@ require_once 'includes/header.php';
 
                 <div style="margin-top: 48px; border-top: 1px solid var(--outline-variant); padding-top: 24px;">
                     <h2 class="text-primary" style="margin-bottom: 16px;">Deskripsi Produk</h2>
-                    <p class="text-on-surface-variant"><?php echo e($product['description']); ?></p>
+                    <p class="text-on-surface-variant"><?php echo e($product['deskripsi']); ?></p>
                 </div>
             </div>
         </div>

@@ -38,13 +38,13 @@ $subtotal = 0;
 if (!empty($_SESSION['cart'])) {
     $ids = array_keys($_SESSION['cart']);
     $placeholders = implode(',', array_fill(0, count($ids), '?'));
-    $stmt = $pdo->prepare("SELECT * FROM products WHERE id IN ($placeholders)");
+    $stmt = $pdo->prepare("SELECT * FROM produk WHERE produk_id IN ($placeholders)");
     $stmt->execute($ids);
     $products = $stmt->fetchAll();
 
     foreach ($products as $p) {
-        $qty = $_SESSION['cart'][$p['id']];
-        $total = $p['price'] * $qty;
+        $qty = $_SESSION['cart'][$p['produk_id']];
+        $total = $p['harga'] * $qty;
         $subtotal += $total;
         $cart_items[] = array_merge($p, ['qty' => $qty, 'total' => $total]);
     }
@@ -54,7 +54,7 @@ if (!empty($_SESSION['cart'])) {
 <main class="py-xl">
     <div class="container">
         <h1 class="font-display" style="font-size: 56px; margin-bottom: 24px;">Keranjang Belanja</h1>
-        <p class="text-secondary" style="margin-bottom: 48px; max-width: 600px;">Lengkapi pesanan Anda dan nikmati kemurnian madu hutan dari lereng pegunungan Batu Meka.</p>
+        <p class="text-secondary" style="margin-bottom: 48px; max-width: 600px;">Lengkapi pesanan Anda dan nikmati kemurnian madu hutan dari lereng pegunungan BatuMekar.</p>
 
         <?php if (empty($cart_items)): ?>
             <div class="text-center" style="padding: 80px 0;">
@@ -67,23 +67,23 @@ if (!empty($_SESSION['cart'])) {
                 <?php foreach ($cart_items as $item): ?>
                 <div class="card" style="display: flex; align-items: center; justify-content: space-between;">
                     <div style="display: flex; align-items: center; gap: 24px;">
-                        <img src="<?php echo e($item['image']); ?>" alt="<?php echo e($item['name']); ?>" class="cart-item-img">
+                        <img src="<?php echo e($item['gambar']); ?>" alt="<?php echo e($item['nama']); ?>" class="cart-item-img">
                         <div>
-                            <h3 style="font-size: 20px;"><?php echo e($item['name']); ?></h3>
-                            <p style="color: var(--on-surface-variant);"><?php echo e(format_rupiah($item['price'])); ?></p>
+                            <h3 style="font-size: 20px;"><?php echo e($item['nama']); ?></h3>
+                            <p style="color: var(--on-surface-variant);"><?php echo e(format_rupiah($item['harga'])); ?></p>
                         </div>
                     </div>
                     <div style="display: flex; align-items: center; gap: 16px;">
                         <form action="keranjang.php" method="POST" class="qty-control">
                             <input type="hidden" name="action" value="update">
-                            <input type="hidden" name="product_id" value="<?php echo e($item['id']); ?>">
+                            <input type="hidden" name="product_id" value="<?php echo e($item['produk_id']); ?>">
                             <button type="submit" name="quantity" value="<?php echo e($item['qty'] - 1); ?>"><span class="material-symbols-outlined" style="font-size: 16px;">remove</span></button>
                             <span style="width: 24px; text-align: center; font-weight: 600;"><?php echo e($item['qty']); ?></span>
                             <button type="submit" name="quantity" value="<?php echo e($item['qty'] + 1); ?>"><span class="material-symbols-outlined" style="font-size: 16px;">add</span></button>
                         </form>
                         <form action="keranjang.php" method="POST">
                             <input type="hidden" name="action" value="remove">
-                            <input type="hidden" name="product_id" value="<?php echo e($item['id']); ?>">
+                            <input type="hidden" name="product_id" value="<?php echo e($item['produk_id']); ?>">
                             <button type="submit" style="color: var(--error);"><span class="material-symbols-outlined">delete</span></button>
                         </form>
                     </div>

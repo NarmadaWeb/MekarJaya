@@ -5,48 +5,170 @@ if (session_status() === PHP_SESSION_NONE) {
 require_once __DIR__ . '/../includes/functions.php';
 require_once __DIR__ . '/../config/db.php';
 
-if (!isset($_SESSION['user_id'])) {
-    $_SESSION['user_id'] = 1;
-}
 require_login();
 
-$stmt = $pdo->prepare("SELECT * FROM users WHERE id = ?");
+$stmt = $pdo->prepare("SELECT * FROM pengguna WHERE pengguna_id = ?");
 $stmt->execute([$_SESSION['user_id']]);
 $user = $stmt->fetch();
 
-$page_title = 'Profile Settings';
+if (!$user) {
+    session_destroy();
+    header("Location: ../index.php");
+    exit;
+}
+
+$success_msg = '';
+$error_msg = '';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $name = trim($_POST['name'] ?? '');
+    $email = trim($_POST['email'] ?? '');
+    $phone = trim($_POST['phone'] ?? '');
+    $address = trim($_POST['address'] ?? '');
+
+    if (empty($name) || empty($email)) {
+        $error_msg = 'Nama dan Email wajib diisi.';
+    } else {
+        try {
+            $update_stmt = $pdo->prepare("UPDATE pengguna SET nama = ?, email = ?, telepon = ?, alamat = ? WHERE pengguna_id = ?");
+            $update_stmt->execute([$name, $email, $phone, $address, $_SESSION['user_id']]);
+            
+            // Handle profile photo upload
+            if (isset($_FILES['profile_photo']) && $_FILES['profile_photo']['error'] === UPLOAD_ERR_OK) {
+                $file_tmp = $_FILES['profile_photo']['tmp_name'];
+                $file_name = $_FILES['profile_photo']['name'];
+                $file_size = $_FILES['profile_photo']['size'];
+                $file_ext = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+                
+                $allowed_exts = ['jpg', 'jpeg', 'png'];
+                if (in_array($file_ext, $allowed_exts)) {
+                    if ($file_size <= 2 * 1024 * 1024) {
+                        $upload_dir = __DIR__ . '/../assets/uploads/profile/';
+                        if (!file_exists($upload_dir)) {
+                            mkdir($upload_dir, 0755, true);
+                        }
+                        
+                        $new_photo_name = 'profile_' . $_SESSION['user_id'] . '_' . time() . '.' . $file_ext;
+                        if (move_uploaded_file($file_tmp, $upload_dir . $new_photo_name)) {
+                            $photo_path = 'assets/uploads/profile/' . $new_photo_name;
+                            
+                            // Delete old photo file if it exists
+                            if (!empty($user['foto_profil']) && file_exists(__DIR__ . '/../' . $user['foto_profil'])) {
+                                @unlink(__DIR__ . '/../' . $user['foto_profil']);
+                            }
+                            
+                            $update_photo = $pdo->prepare("UPDATE pengguna SET foto_profil = ? WHERE pengguna_id = ?");
+                            $update_photo->execute([$photo_path, $_SESSION['user_id']]);
+                        }
+                    } else {
+                        $error_msg = 'Ukuran foto terlalu besar. Maksimal 2MB.';
+                    }
+                } else {
+                    $error_msg = 'Format file tidak didukung. Harap upload gambar JPG atau PNG.';
+                }
+            }
+            
+            // Re-fetch user details
+            $stmt->execute([$_SESSION['user_id']]);
+            $user = $stmt->fetch();
+            
+            if (empty($error_msg)) {
+                $success_msg = 'Profil berhasil diperbarui!';
+            }
+        } catch (PDOException $e) {
+            $error_msg = 'Gagal memperbarui profil. Email mungkin sudah digunakan.';
+        }
+    }
+}
+
+$page_title = 'Pengaturan Profil';
 require_once __DIR__ . '/../includes/header.php';
 ?>
 
-<main style="padding: 48px 0;">
-    <div class="container" style="display: flex; gap: 48px;">
-        <aside style="width: 250px; flex-shrink: 0;">
+<main style="padding: 48px 0; background: var(--background);">
+    <div class="container" style="display: flex; gap: 48px; align-items: flex-start;">
+        <!-- Sidebar Navigation -->
+        <aside style="width: 280px; flex-shrink: 0;">
             <nav class="sidebar-nav">
-                <a href="dashboard.php" class="btn sidebar-link" style="justify-content: flex-start; color: var(--secondary);">Dashboard</a>
-                <a href="orders.php" class="btn sidebar-link" style="justify-content: flex-start; color: var(--secondary);">My Orders</a>
-                <a href="profile.php" class="btn sidebar-link active" style="justify-content: flex-start;">Profile</a>
+                <a href="dashboard.php" class="sidebar-link">
+                    <span class="material-symbols-outlined">dashboard</span>
+                    Dashboard
+                </a>
+                <a href="orders.php" class="sidebar-link">
+                    <span class="material-symbols-outlined">shopping_bag</span>
+                    Pesanan Saya
+                </a>
+                <a href="profile.php" class="sidebar-link active">
+                    <span class="material-symbols-outlined">person</span>
+                    Profil Saya
+                </a>
+                <a href="../logout.php" class="sidebar-link" style="color: var(--error) !important;">
+                    <span class="material-symbols-outlined" style="color: var(--error) !important;">logout</span>
+                    Keluar
+                </a>
             </nav>
         </aside>
 
+        <!-- Main Profile Content -->
         <section style="flex-grow: 1;">
-            <h1 style="font-size: 32px; margin-bottom: 32px;">Profile Settings</h1>
+            <h1 style="font-size: 32px; margin-bottom: 32px; color: var(--secondary);">Pengaturan Profil</h1>
 
-            <div class="card" style="max-width: 500px;">
-                <h2 style="margin-bottom: 24px;">Personal Details</h2>
-                <form style="display: flex; flex-direction: column; gap: 16px;">
+            <?php if (!empty($success_msg)): ?>
+                <div class="alert alert-success">
+                    <?php echo e($success_msg); ?>
+                </div>
+            <?php endif; ?>
+
+            <?php if (!empty($error_msg)): ?>
+                <div class="alert alert-danger">
+                    <?php echo e($error_msg); ?>
+                </div>
+            <?php endif; ?>
+
+            <div class="card" style="max-width: 650px; padding: 32px; display: flex; flex-direction: column; gap: 24px;">
+                <div style="display: flex; align-items: center; gap: 20px; border-bottom: 1px solid var(--outline-variant)/20; padding-bottom: 20px; margin-bottom: 8px;">
+                    <?php if (!empty($user['foto_profil']) && file_exists(__DIR__ . '/../' . $user['foto_profil'])): ?>
+                        <img src="../<?php echo e($user['foto_profil']); ?>" alt="Profile" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 3px solid white; box-shadow: 0 4px 12px rgba(0,0,0,0.08); flex-shrink: 0;">
+                    <?php else: ?>
+                        <div style="display: flex; align-items: center; justify-content: center; background: var(--primary); color: white; font-weight: 800; font-size: 32px; border-radius: 50%; width: 80px; height: 80px; text-transform: uppercase; border: 3px solid white; box-shadow: 0 4px 12px rgba(0,0,0,0.08); flex-shrink: 0;">
+                            <?php echo substr(e($user['nama']), 0, 1); ?>
+                        </div>
+                    <?php endif; ?>
                     <div>
-                        <label style="display: block; margin-bottom: 8px;">Full Name</label>
-                        <input type="text" value="<?php echo e($user['name']); ?>" style="width: 100%; padding: 12px; border: 1px solid var(--outline-variant); border-radius: 8px;">
+                        <h2 style="font-size: 24px; margin: 0; color: var(--secondary); font-weight: 700;"><?php echo e($user['nama']); ?></h2>
+                        <p style="color: var(--on-surface-variant); margin: 4px 0 0 0; font-size: 14px;">Atur informasi profil Anda</p>
                     </div>
-                    <div>
-                        <label style="display: block; margin-bottom: 8px;">Email</label>
-                        <input type="email" value="<?php echo e($user['email']); ?>" style="width: 100%; padding: 12px; border: 1px solid var(--outline-variant); border-radius: 8px;">
+                </div>
+                
+                <form action="profile.php" method="POST" enctype="multipart/form-data" style="display: flex; flex-direction: column; gap: 8px;">
+                    <div class="form-group" style="margin-bottom: 16px;">
+                        <label for="profile_photo" style="font-weight: 600; display: block; margin-bottom: 6px;">Foto Profil (Format: JPG, PNG, Maks 2MB)</label>
+                        <input type="file" id="profile_photo" name="profile_photo" class="form-control" accept="image/*">
                     </div>
-                    <div>
-                        <label style="display: block; margin-bottom: 8px;">Phone</label>
-                        <input type="tel" value="<?php echo e($user['phone']); ?>" style="width: 100%; padding: 12px; border: 1px solid var(--outline-variant); border-radius: 8px;">
+                    
+                    <div class="form-group">
+                        <label for="name">Nama Lengkap</label>
+                        <input type="text" id="name" name="name" class="form-control" value="<?php echo e($user['nama']); ?>" required>
                     </div>
-                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                    
+                    <div class="form-group">
+                        <label for="email">Alamat Email</label>
+                        <input type="email" id="email" name="email" class="form-control" value="<?php echo e($user['email']); ?>" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" class="form-control" value="<?php echo e($user['telepon']); ?>">
+                    </div>
+ 
+                    <div class="form-group">
+                        <label for="address">Shipping Address</label>
+                        <textarea id="address" name="address" class="form-control" rows="4" style="resize: vertical;"><?php echo e($user['alamat'] ?? ''); ?></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="align-self: flex-start; padding: 14px 32px; margin-top: 12px;">
+                        <span class="material-symbols-outlined" style="font-size: 20px;">save</span> Save Changes
+                    </button>
                 </form>
             </div>
         </section>
@@ -54,3 +176,4 @@ require_once __DIR__ . '/../includes/header.php';
 </main>
 
 <?php require_once __DIR__ . '/../includes/footer.php'; ?>
+

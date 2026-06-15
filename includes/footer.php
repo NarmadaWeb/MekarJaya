@@ -1,36 +1,48 @@
 <!-- Footer -->
-<footer class="bg-surface-container-low mt-xl">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter py-xl px-lg max-w-container-max mx-auto">
-        <div class="md:col-span-1">
-            <span class="font-display-md text-display-md text-on-surface">Madu Batu Meka</span>
-            <p class="mt-md text-secondary font-body-md">Bringing the golden warmth of the village to your home, one jar at a time.</p>
+<footer class="site-footer">
+    <div class="container footer-grid">
+        <div class="footer-col footer-brand">
+            <a href="index.php" class="footer-logo">BatuMekar</a>
+            <p style="color: #b0a79a; line-height: 1.6; margin: 0;">Bringing the golden warmth of the village to your home, one jar of pure artisanal honey at a time.</p>
+            <div class="footer-socials">
+                <a href="#" class="social-icon" aria-label="Facebook">
+                    <span class="material-symbols-outlined">share</span>
+                </a>
+                <a href="#" class="social-icon" aria-label="Instagram">
+                    <span class="material-symbols-outlined">photo_camera</span>
+                </a>
+                <a href="#" class="social-icon" aria-label="YouTube">
+                    <span class="material-symbols-outlined">smart_display</span>
+                </a>
+            </div>
         </div>
-        <div>
-            <h4 class="font-label-lg text-label-lg text-on-surface mb-md uppercase tracking-widest">Village</h4>
-            <ul class="space-y-sm">
-                <li><a class="font-label-sm text-label-sm text-secondary hover:text-primary transition-colors underline" href="tentang-desa.php">About Us</a></li>
-                <li><a class="font-label-sm text-label-sm text-secondary hover:text-primary transition-colors underline" href="#">Harvest Calendar</a></li>
-                <li><a class="font-label-sm text-label-sm text-secondary hover:text-primary transition-colors underline" href="#">Sustainability</a></li>
+        <div class="footer-col">
+            <h4>Village</h4>
+            <ul class="footer-links">
+                <li><a href="tentang-desa.php"><span class="material-symbols-outlined">info</span> About Our Story</a></li>
+                <li><a href="#"><span class="material-symbols-outlined">calendar_today</span> Harvest Calendar</a></li>
+                <li><a href="#"><span class="material-symbols-outlined">eco</span> Sustainability</a></li>
             </ul>
         </div>
-        <div>
-            <h4 class="font-label-lg text-label-lg text-on-surface mb-md uppercase tracking-widest">Support</h4>
-            <ul class="space-y-sm">
-                <li><a class="font-label-sm text-label-sm text-primary font-semibold" href="bantuan.php">Help Center</a></li>
-                <li><a class="font-label-sm text-label-sm text-secondary hover:text-primary transition-colors underline" href="#">Shipping Policy</a></li>
-                <li><a class="font-label-sm text-label-sm text-secondary hover:text-primary transition-colors underline" href="#">Terms of Service</a></li>
+        <div class="footer-col">
+            <h4>Support</h4>
+            <ul class="footer-links">
+                <li><a href="bantuan.php" style="color: var(--primary-container); font-weight: 600;"><span class="material-symbols-outlined">help</span> Help Center</a></li>
+                <li><a href="#"><span class="material-symbols-outlined">local_shipping</span> Shipping Policy</a></li>
+                <li><a href="#"><span class="material-symbols-outlined">gavel</span> Terms of Service</a></li>
             </ul>
         </div>
-        <div>
-            <h4 class="font-label-lg text-label-lg text-on-surface mb-md uppercase tracking-widest">Connect</h4>
-            <ul class="space-y-sm">
-                <li><a class="font-label-sm text-label-sm text-secondary hover:text-primary transition-colors underline" href="kontak.php">Contact Us</a></li>
-                <li><a class="font-label-sm text-label-sm text-secondary hover:text-primary transition-colors underline" href="reseller/dashboard.php">Wholesale</a></li>
+        <div class="footer-col">
+            <h4>Connect</h4>
+            <ul class="footer-links">
+                <li><a href="kontak.php"><span class="material-symbols-outlined">mail</span> Contact Us</a></li>
+                <li><a href="reseller/dashboard.php"><span class="material-symbols-outlined">storefront</span> Wholesale Portal</a></li>
             </ul>
         </div>
     </div>
-    <div class="max-w-container-max mx-auto px-lg pb-lg border-t border-outline-variant/20 pt-md text-center">
-        <p class="font-label-sm text-label-sm text-secondary">© 2024 Madu Batu Meka Village. Crafted by Nature.</p>
+    <div class="container footer-bottom">
+        <p style="margin: 0;">© 2026 BatuMekar Village. Crafted by Nature with Passion.</p>
+        <p style="margin: 0; font-size: 12px; opacity: 0.6;">All rights reserved. Purity Guaranteed.</p>
     </div>
 </footer>
 <script>
@@ -51,3 +63,4 @@
 </script>
 </body>
 </html>
+

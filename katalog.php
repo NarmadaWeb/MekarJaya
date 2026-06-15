@@ -36,7 +36,7 @@ $products = get_all_products($pdo);
                 <div class="grid grid-3">
                     <?php
                     if ($selected_cat) {
-                        $stmt = $pdo->prepare("SELECT * FROM products WHERE category = ?");
+                        $stmt = $pdo->prepare("SELECT * FROM produk WHERE kategori = ?");
                         $stmt->execute([$selected_cat]);
                         $filtered_products = $stmt->fetchAll();
                     } else {
@@ -44,15 +44,15 @@ $products = get_all_products($pdo);
                     }
                     foreach ($filtered_products as $product): ?>
                     <div class="card" style="padding: 0; overflow: hidden;">
-                        <a href="produk.php?id=<?php echo e($product['id']); ?>">
-                            <img src="<?php echo e($product['image']); ?>" alt="<?php echo e($product['name']); ?>" style="width: 100%; height: 250px; object-fit: cover;">
+                        <a href="produk.php?id=<?php echo e($product['produk_id']); ?>">
+                            <img src="<?php echo e($product['gambar']); ?>" alt="<?php echo e($product['nama']); ?>" style="width: 100%; height: 250px; object-fit: cover;">
                         </a>
                         <div style="padding: 24px;">
-                            <h3 class="text-secondary"><a href="produk.php?id=<?php echo e($product['id']); ?>"><?php echo e($product['name']); ?></a></h3>
-                            <p class="text-primary" style="font-weight: 700; margin: 8px 0;"><?php echo e(format_rupiah($product['price'])); ?></p>
+                            <h3 class="text-secondary"><a href="produk.php?id=<?php echo e($product['produk_id']); ?>"><?php echo e($product['nama']); ?></a></h3>
+                            <p class="text-primary" style="font-weight: 700; margin: 8px 0;"><?php echo e(format_rupiah($product['harga'])); ?></p>
                             <form action="keranjang.php" method="POST">
                                 <input type="hidden" name="action" value="add">
-                                <input type="hidden" name="product_id" value="<?php echo e($product['id']); ?>">
+                                <input type="hidden" name="product_id" value="<?php echo e($product['produk_id']); ?>">
                                 <button type="submit" class="btn btn-primary" style="width: 100%;">Beli</button>
                             </form>
                         </div>
