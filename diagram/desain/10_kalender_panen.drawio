@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="65bd71144e">
+    <diagram id="page_kalender_panen" name="10_kalender_panen">
+        <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="800" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="web_frame" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontColor=#000000;align=center;verticalAlign=top;pointerEvents=0;" vertex="1" parent="1">
+                    <mxGeometry x="0" y="0" width="1100" height="800" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_kalender_panen_1" value="" style="line;strokeWidth=1;html=1;strokeColor=#000000;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="0" y="60" width="1100" height="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_kalender_panen_2" value="Madu MekarJaya" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="15" width="150" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_kalender_panen_3" value="Beranda" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="250" y="15" width="76" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_kalender_panen_4" value="Katalog" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="330" y="15" width="76" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_kalender_panen_5" value="Kalender Panen" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=12;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="410" y="15" width="132" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_kalender_panen_6" value="Tentang Desa" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="520" y="15" width="116" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_kalender_panen_7" value="Blog" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="620" y="15" width="52" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_kalender_panen_8" value="Hubungi Kami" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="680" y="15" width="116" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_kalender_panen_9" value="Bantuan" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="785" y="15" width="76" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_kalender_panen_10" value="[Icon] Keranjang (2)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontColor=#000000;fontSize=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="880" y="15" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_kalender_panen_11" value="[Icon] Akun" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontColor=#000000;fontSize=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="1000" y="15" width="70" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_kalender_panen_12" value="Kalender Panen Madu Desa BatuMekar" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="80" width="500" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_kalender_panen_13" value="Siklus panen madu hutan alami di desa kami mengikuti masa berbunga nektar pohon musiman." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="110" width="800" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_kalender_panen_14" value="Tabel Siklus Panen" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontColor=#000000;fontSize=12;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="140" width="1000" height="350" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_kalender_panen_15" value="BULAN PANEN" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="70" y="160" width="150" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_kalender_panen_16" value="JENIS MADU" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="250" y="160" width="150" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_kalender_panen_17" value="NEKTAR FLORA" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="450" y="160" width="200" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_kalender_panen_18" value="ESTIMASI KUANTITAS" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="700" y="160" width="150" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_kalender_panen_19" value="STATUS" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="900" y="160" width="100" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_kalender_panen_20" value="" style="line;strokeWidth=1;html=1;strokeColor=#000000;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="190" width="1000" height="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_kalender_panen_21" value="Januari - Februari" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="70" y="210" width="150" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_kalender_panen_22" value="Madu Kaliandra" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="250" y="210" width="150" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_kalender_panen_23" value="Bunga Kaliandra Liar" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="450" y="210" width="200" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_kalender_panen_24" value="Sekitar 120 Kg" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="700" y="210" width="150" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_kalender_panen_25" value="Selesai Panen" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="900" y="210" width="100" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_kalender_panen_26" value="" style="line;strokeWidth=1;html=1;strokeColor=#000000;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="245" width="1000" height="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_kalender_panen_27" value="Maret - Mei" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="70" y="260" width="150" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_kalender_panen_28" value="Madu Multiflora" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="250" y="260" width="150" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_kalender_panen_29" value="Bunga Hutan Heterogen" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="450" y="260" width="200" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_kalender_panen_30" value="Sekitar 350 Kg" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="700" y="260" width="150" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_kalender_panen_31" value="Selesai Panen" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="900" y="260" width="100" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_kalender_panen_32" value="" style="line;strokeWidth=1;html=1;strokeColor=#000000;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="295" width="1000" height="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_kalender_panen_33" value="Juni - Agustus" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="70" y="310" width="150" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_kalender_panen_34" value="Madu Hutan Liar (Odeng)" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="250" y="310" width="180" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_kalender_panen_35" value="Pohon Sialang Rimba" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="450" y="310" width="200" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_kalender_panen_36" value="Sekitar 500 Kg" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="700" y="310" width="150" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_kalender_panen_37" value="Mulai Panen" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=12;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="900" y="310" width="90" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_kalender_panen_38" value="" style="line;strokeWidth=1;html=1;strokeColor=#000000;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="345" width="1000" height="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_kalender_panen_39" value="September - November" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="70" y="360" width="150" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_kalender_panen_40" value="Madu Kelengkeng" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="250" y="360" width="150" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_kalender_panen_41" value="Bunga Kelengkeng Desa" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="450" y="360" width="200" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_kalender_panen_42" value="Sekitar 200 Kg" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="700" y="360" width="150" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_kalender_panen_43" value="Mendatang" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="900" y="360" width="100" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_kalender_panen_44" value="" style="line;strokeWidth=1;html=1;strokeColor=#000000;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="395" width="1000" height="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_kalender_panen_45" value="INFORMASI PEMESANAN PANEN RAYA&#10;Pelanggan dapat melakukan pre-order madu segar langsung sesaat setelah masa panen selesai untuk jaminan kesegaran maksimal. Hubungi WhatsApp admin kelompok tani kami." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontColor=#000000;fontSize=12;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="510" width="1000" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_kalender_panen_46" value="" style="line;strokeWidth=1;html=1;strokeColor=#000000;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="0" y="740" width="1100" height="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_kalender_panen_47" value="© 2026 Kelompok Tani Desa BatuMekar - Madu MekarJaya. All Rights Reserved." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="750" width="600" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_kalender_panen_48" value="Teknologi Informasi - Universitas Mataram" style="text;html=1;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="850" y="750" width="200" height="30" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

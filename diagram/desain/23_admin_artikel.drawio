@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="65bd71144e">
+    <diagram id="page_admin_artikel" name="23_admin_artikel">
+        <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="800" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="web_frame" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontColor=#000000;align=center;verticalAlign=top;pointerEvents=0;" vertex="1" parent="1">
+                    <mxGeometry x="0" y="0" width="1100" height="800" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_admin_artikel_1" value="" style="line;strokeWidth=1;html=1;strokeColor=#000000;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="0" y="60" width="1100" height="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_admin_artikel_2" value="Panel Admin MekarJaya" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="15" width="250" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_admin_artikel_3" value="Lihat Toko" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontColor=#000000;fontSize=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="850" y="15" width="100" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_admin_artikel_4" value="Keluar" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=12;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="960" y="15" width="90" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_admin_artikel_5" value="MENU ADMIN" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontColor=#000000;fontSize=12;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="100" width="200" height="240" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_admin_artikel_6" value="Dashboard" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="60" y="120" width="180" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_admin_artikel_7" value="Kelola Produk" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="60" y="155" width="180" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_admin_artikel_8" value="Kelola Kategori" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="60" y="190" width="180" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_admin_artikel_9" value="Kelola Pesanan" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="60" y="225" width="180" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_admin_artikel_10" value="Kelola Artikel" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=12;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="60" y="260" width="180" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_admin_artikel_11" value="KELOLA ARTIKEL BLOG" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontColor=#000000;fontSize=12;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+                    <mxGeometry x="280" y="100" width="770" height="500" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_admin_artikel_12" value="Daftar Artikel &amp; Berita" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="300" y="120" width="400" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_admin_artikel_13" value="+ Tambah Artikel Baru" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=12;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="850" y="120" width="180" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_admin_artikel_14" value="JUDUL ARTIKEL" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="300" y="160" width="250" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_admin_artikel_15" value="PENULIS" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="570" y="160" width="100" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_admin_artikel_16" value="KATEGORI" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="690" y="160" width="120" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_admin_artikel_17" value="TANGGAL" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="830" y="160" width="100" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_admin_artikel_18" value="AKSI" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="950" y="160" width="90" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_admin_artikel_19" value="" style="line;strokeWidth=1;html=1;strokeColor=#000000;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="280" y="190" width="770" height="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_admin_artikel_20" value="Panen Raya Madu Kaliandra Musim Ini Berlimpah" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="300" y="200" width="250" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_admin_artikel_21" value="Admin" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="570" y="200" width="100" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_admin_artikel_22" value="Berita Desa" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="690" y="200" width="120" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_admin_artikel_23" value="10 Jun 2026" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="830" y="200" width="100" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_admin_artikel_24" value="Edit" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontColor=#000000;fontSize=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="940" y="200" width="45" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_admin_artikel_25" value="Del" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontColor=#000000;fontSize=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="990" y="200" width="45" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_admin_artikel_26" value="" style="line;strokeWidth=1;html=1;strokeColor=#000000;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="280" y="235" width="770" height="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_admin_artikel_27" value="5 Manfaat Utama Madu Hutan Liar Bagi Imunitas" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="300" y="250" width="250" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_admin_artikel_28" value="Admin" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="570" y="250" width="100" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_admin_artikel_29" value="Kesehatan" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="690" y="250" width="120" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_admin_artikel_30" value="28 Mei 2026" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="830" y="250" width="100" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_admin_artikel_31" value="Edit" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontColor=#000000;fontSize=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="940" y="250" width="45" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_admin_artikel_32" value="Del" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontColor=#000000;fontSize=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="990" y="250" width="45" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_admin_artikel_33" value="" style="line;strokeWidth=1;html=1;strokeColor=#000000;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="280" y="285" width="770" height="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_admin_artikel_34" value="" style="line;strokeWidth=1;html=1;strokeColor=#000000;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="0" y="740" width="1100" height="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_admin_artikel_35" value="© 2026 Kelompok Tani Desa BatuMekar - Madu MekarJaya. All Rights Reserved." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="750" width="600" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_admin_artikel_36" value="Teknologi Informasi - Universitas Mataram" style="text;html=1;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="850" y="750" width="200" height="30" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="Electron" version="21.6.8" modified="2026-06-15T10:00:00.000Z" agent="Mozilla/5.0" type="device">
+    <diagram id="act-usr-katalog" name="Activity Cari &amp; Filter Katalog">
+        <mxGraphModel dx="1000" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="700" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="lane_left" value="Pelanggan" style="swimlane;startSize=30;html=1;whiteSpace=wrap;collapsible=0;connectable=0;container=1;pointerEvents=0;fillColor=none;strokeColor=#000000;fontStyle=1;align=center;fontSize=13;fontColor=#000000;strokeWidth=1.5;" vertex="1" parent="1">
+                    <mxGeometry x="60" y="40" width="360" height="610" as="geometry"/>
+                </mxCell>
+                <mxCell id="lane_right" value="Sistem" style="swimlane;startSize=30;html=1;whiteSpace=wrap;collapsible=0;connectable=0;container=1;pointerEvents=0;fillColor=none;strokeColor=#000000;fontStyle=1;align=center;fontSize=13;fontColor=#000000;strokeWidth=1.5;" vertex="1" parent="1">
+                    <mxGeometry x="480" y="40" width="360" height="610" as="geometry"/>
+                </mxCell>
+                <mxCell id="start" value="" style="ellipse;html=1;fillColor=#000000;strokeColor=none;aspect=fixed;" vertex="1" parent="1">
+                    <mxGeometry x="225" y="80" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="a1" value="Mengakses Halaman Katalog &amp; Mengetik&#10;Keyword Pencarian / Memilih Filter Kategori" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;fontColor=#000000;align=center;verticalAlign=middle;strokeWidth=1.5;" vertex="1" parent="1">
+                    <mxGeometry x="140" y="140" width="200" height="55" as="geometry"/>
+                </mxCell>
+                <mxCell id="s1" value="Memproses Query Pencarian di DB&#10;(Mencari Kategori/Nama Cocok)" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;fontColor=#000000;align=center;verticalAlign=middle;strokeWidth=1.5;" vertex="1" parent="1">
+                    <mxGeometry x="560" y="140" width="200" height="55" as="geometry"/>
+                </mxCell>
+                <mxCell id="dec" value="Produk Ditemukan?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;fontColor=#000000;align=center;verticalAlign=middle;strokeWidth=1.5;" vertex="1" parent="1">
+                    <mxGeometry x="600" y="230" width="120" height="75" as="geometry"/>
+                </mxCell>
+                <mxCell id="s2_err" value="Menampilkan Keterangan&#10;'Produk Tidak Ditemukan'" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;fontColor=#000000;align=center;verticalAlign=middle;strokeWidth=1.5;" vertex="1" parent="1">
+                    <mxGeometry x="560" y="340" width="200" height="55" as="geometry"/>
+                </mxCell>
+                <mxCell id="s2_ok" value="Menampilkan Grid Produk Sesuai Hasil Filter" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;fontColor=#000000;align=center;verticalAlign=middle;strokeWidth=1.5;" vertex="1" parent="1">
+                    <mxGeometry x="560" y="430" width="200" height="55" as="geometry"/>
+                </mxCell>
+                <mxCell id="final" value="" style="ellipse;html=1;fillColor=none;strokeColor=#000000;strokeWidth=2;aspect=fixed;" vertex="1" parent="1">
+                    <mxGeometry x="225" y="442" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="final_in" value="" style="ellipse;html=1;fillColor=#000000;strokeColor=none;aspect=fixed;" vertex="1" parent="1">
+                    <mxGeometry x="232" y="449" width="16" height="16" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge_act-usr-katalog_1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.5;fontSize=12;labelBackgroundColor=#FFFFFF;fontColor=#000000;" edge="1" parent="1" source="start" target="a1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge_act-usr-katalog_2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.5;fontSize=12;labelBackgroundColor=#FFFFFF;fontColor=#000000;" edge="1" parent="1" source="a1" target="s1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge_act-usr-katalog_3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.5;fontSize=12;labelBackgroundColor=#FFFFFF;fontColor=#000000;" edge="1" parent="1" source="s1" target="dec">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge_act-usr-katalog_4" value="Ya" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.5;fontSize=12;labelBackgroundColor=#FFFFFF;fontColor=#000000;" edge="1" parent="1" source="dec" target="s2_ok">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge_act-usr-katalog_5" value="Tidak" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.5;fontSize=12;labelBackgroundColor=#FFFFFF;fontColor=#000000;" edge="1" parent="1" source="dec" target="s2_err">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge_act-usr-katalog_6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.5;fontSize=12;labelBackgroundColor=#FFFFFF;fontColor=#000000;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="s2_err" target="final">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="660" y="410"/>
+                            <mxPoint x="240" y="410"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge_act-usr-katalog_7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.5;fontSize=12;labelBackgroundColor=#FFFFFF;fontColor=#000000;" edge="1" parent="1" source="s2_ok" target="final">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="65bd71144e">
+    <diagram id="page_blog" name="9_blog">
+        <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="800" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="web_frame" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontColor=#000000;align=center;verticalAlign=top;pointerEvents=0;" vertex="1" parent="1">
+                    <mxGeometry x="0" y="0" width="1100" height="800" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_blog_1" value="" style="line;strokeWidth=1;html=1;strokeColor=#000000;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="0" y="60" width="1100" height="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_blog_2" value="Madu MekarJaya" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="15" width="150" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_blog_3" value="Beranda" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="250" y="15" width="76" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_blog_4" value="Katalog" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="330" y="15" width="76" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_blog_5" value="Kalender Panen" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="410" y="15" width="132" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_blog_6" value="Tentang Desa" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="520" y="15" width="116" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_blog_7" value="Blog" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=12;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="620" y="15" width="52" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_blog_8" value="Hubungi Kami" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="680" y="15" width="116" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_blog_9" value="Bantuan" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="785" y="15" width="76" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_blog_10" value="[Icon] Keranjang (2)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontColor=#000000;fontSize=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="880" y="15" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_blog_11" value="[Icon] Akun" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontColor=#000000;fontSize=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="1000" y="15" width="70" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_blog_12" value="Blog &amp; Kabar Panen MekarJaya" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="80" width="400" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_blog_13" value="Panen Raya Madu Kaliandra Musim Ini Berlimpah - 10 Juni 2026&#10;&#10;Musim kemarau tahun ini membawa berkah tersendiri bagi kelompok tani MekarJaya. Bunga kaliandra bermekaran sempurna di bukit BatuMekar, menghasilkan madu dengan aroma harum khas..." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontColor=#000000;fontSize=12;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="120" width="700" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_blog_14" value="Baca Selengkapnya" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontColor=#000000;fontSize=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="580" y="210" width="150" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_blog_15" value="5 Manfaat Utama Madu Hutan Liar Bagi Imunitas Tubuh - 28 Mei 2026&#10;&#10;Madu hutan liar mengandung antioksidan fenolik yang jauh lebih tinggi dibanding madu ternakan biasa. Kandungan ini efektif melawan radikal bebas dan memperkuat sistem imun tubuh..." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontColor=#000000;fontSize=12;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="270" width="700" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_blog_16" value="Baca Selengkapnya" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontColor=#000000;fontSize=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="580" y="360" width="150" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_blog_17" value="Bagaimana Membedakan Madu Asli dan Madu Campuran? - 15 Mei 2026&#10;&#10;Banyak beredar madu sirup atau campuran gula di pasaran. Kelompok Tani MekarJaya membagikan tips sederhana menguji keaslian madu menggunakan air hangat dan uji bakar kertas..." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontColor=#000000;fontSize=12;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="420" width="700" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_blog_18" value="Baca Selengkapnya" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontColor=#000000;fontSize=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="580" y="510" width="150" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_blog_19" value="KATEGORI BLOG&#10;[x] Berita Desa (4)&#10;[ ] Tips &amp; Trik (6)&#10;[ ] Manfaat Kesehatan (12)&#10;[ ] Pengumuman (2)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontColor=#000000;fontSize=12;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+                    <mxGeometry x="780" y="120" width="270" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_blog_20" value="PRODUK TERPOPULER&#10;1. Madu Hutan Liar 500ml&#10;2. Madu Kaliandra 350ml&#10;3. Madu Trigona 350ml" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontColor=#000000;fontSize=12;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+                    <mxGeometry x="780" y="290" width="270" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_blog_21" value="" style="line;strokeWidth=1;html=1;strokeColor=#000000;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="0" y="740" width="1100" height="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_blog_22" value="© 2026 Kelompok Tani Desa BatuMekar - Madu MekarJaya. All Rights Reserved." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="750" width="600" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_blog_23" value="Teknologi Informasi - Universitas Mataram" style="text;html=1;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="850" y="750" width="200" height="30" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

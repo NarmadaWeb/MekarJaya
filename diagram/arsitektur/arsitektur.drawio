@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="Electron" version="21.6.8" modified="2026-06-15T10:00:00.000Z" agent="Mozilla/5.0" type="device">
+    <diagram id="arch-mekarjaya" name="Arsitektur Program">
+        <mxGraphModel dx="1000" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="800" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="layer_client" value="Client-Side (User Interface)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=1.5;fontSize=14;fontStyle=1;fontColor=#000000;align=center;verticalAlign=top;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="80" width="280" height="600" as="geometry"/>
+                </mxCell>
+                <mxCell id="layer_server" value="Server-Side (Application Logic)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=1.5;fontSize=14;fontStyle=1;fontColor=#000000;align=center;verticalAlign=top;" vertex="1" parent="1">
+                    <mxGeometry x="410" y="80" width="280" height="600" as="geometry"/>
+                </mxCell>
+                <mxCell id="layer_db" value="Database Engine" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=1.5;fontSize=14;fontStyle=1;fontColor=#000000;align=center;verticalAlign=top;" vertex="1" parent="1">
+                    <mxGeometry x="770" y="80" width="280" height="600" as="geometry"/>
+                </mxCell>
+                <mxCell id="c1" value="Web Browser Interface&#10;(Chrome, Firefox, Safari)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="70" y="140" width="240" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="c2" value="HTML5 &amp; CSS3 Styling&#10;(Vanilla CSS UI / Font Google)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="70" y="240" width="240" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="c3" value="JavaScript &amp; Fetch API&#10;(Interaktivitas &amp; Kirim Data)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="70" y="320" width="240" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="c4" value="Session Storage &amp; Cookies&#10;(Pengingat Login / Keranjang)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="70" y="400" width="240" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="s1" value="PHP Core Controller Scripts&#10;(index.php, katalog.php, dll.)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="430" y="140" width="240" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="s2" value="Session Handler &amp; Auth Guard&#10;(Proses Login / Cek Peran)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="430" y="240" width="240" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="s3" value="File Upload Handler&#10;(Unggah Bukti Transfer)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="430" y="320" width="240" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="s4" value="PDO Database Abstraction&#10;(config/db.php Helper)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="430" y="400" width="240" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="s5" value="Includes Component Engine&#10;(header.php &amp; footer.php)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="430" y="480" width="240" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="d1" value="SQLite Database Engine&#10;(database.sqlite File)" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=12;size=10;" vertex="1" parent="1">
+                    <mxGeometry x="790" y="140" width="240" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="d2" value="MySQL Server Support&#10;(Koneksi opsional untuk produksi)" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=12;size=10;" vertex="1" parent="1">
+                    <mxGeometry x="790" y="240" width="240" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="d3" value="Database Tables&#10;(pengguna, produk, pesanan, dll.)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="790" y="350" width="240" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge_arch-mekarjaya_1" value="HTTP GET/POST Request" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.5;fontSize=12;labelBackgroundColor=#FFFFFF;fontColor=#000000;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="c1" target="s1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge_arch-mekarjaya_2" value="HTML / JSON Response" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.5;fontSize=12;labelBackgroundColor=#FFFFFF;fontColor=#000000;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="s1" target="c1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge_arch-mekarjaya_3" value="PDO SQLite Conn" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.5;fontSize=12;labelBackgroundColor=#FFFFFF;fontColor=#000000;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="s4" target="d1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="720" y="415"/>
+                            <mxPoint x="720" y="180"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge_arch-mekarjaya_4" value="Execute SQL Queries" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.5;fontSize=12;labelBackgroundColor=#FFFFFF;fontColor=#000000;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="s4" target="d3">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

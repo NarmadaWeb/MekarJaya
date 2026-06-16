@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="65bd71144e">
+    <diagram id="page_user_orders" name="17_user_orders">
+        <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="800" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="web_frame" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontColor=#000000;align=center;verticalAlign=top;pointerEvents=0;" vertex="1" parent="1">
+                    <mxGeometry x="0" y="0" width="1100" height="800" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_user_orders_1" value="" style="line;strokeWidth=1;html=1;strokeColor=#000000;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="0" y="60" width="1100" height="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_user_orders_2" value="Madu MekarJaya" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="15" width="150" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_user_orders_3" value="Beranda" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="250" y="15" width="76" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_user_orders_4" value="Katalog" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="330" y="15" width="76" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_user_orders_5" value="Kalender Panen" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="410" y="15" width="132" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_user_orders_6" value="Tentang Desa" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="520" y="15" width="116" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_user_orders_7" value="Blog" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="620" y="15" width="52" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_user_orders_8" value="Hubungi Kami" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="680" y="15" width="116" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_user_orders_9" value="Bantuan" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="785" y="15" width="76" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_user_orders_10" value="[Icon] Keranjang (2)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontColor=#000000;fontSize=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="880" y="15" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_user_orders_11" value="[Icon] Akun" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontColor=#000000;fontSize=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="1000" y="15" width="70" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_user_orders_12" value="MENU AKUN" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontColor=#000000;fontSize=12;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="100" width="200" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_user_orders_13" value="Dashboard Saya" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="60" y="120" width="180" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_user_orders_14" value="Riwayat Pesanan" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=12;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="60" y="155" width="180" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_user_orders_15" value="Pengaturan Profil" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="60" y="190" width="180" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_user_orders_16" value="Keluar" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="60" y="225" width="180" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_user_orders_17" value="RIWAYAT PEMBELIAN" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontColor=#000000;fontSize=12;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+                    <mxGeometry x="280" y="100" width="770" height="500" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_user_orders_18" value="Daftar Invoice Belanja Anda" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="300" y="120" width="400" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_user_orders_19" value="NO INVOICE" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="300" y="160" width="120" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_user_orders_20" value="TANGGAL" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="430" y="160" width="100" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_user_orders_21" value="GRAND TOTAL" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="550" y="160" width="120" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_user_orders_22" value="STATUS" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="690" y="160" width="150" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_user_orders_23" value="AKSI" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="880" y="160" width="150" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_user_orders_24" value="" style="line;strokeWidth=1;html=1;strokeColor=#000000;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="280" y="190" width="770" height="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_user_orders_25" value="INV-2026061501" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="300" y="200" width="120" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_user_orders_26" value="15 Jun 2026" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="430" y="200" width="100" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_user_orders_27" value="Rp 305.245" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="550" y="200" width="120" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_user_orders_28" value="Belum Bayar" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="690" y="200" width="150" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_user_orders_29" value="Upload Bukti" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=12;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="880" y="200" width="100" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_user_orders_30" value="" style="line;strokeWidth=1;html=1;strokeColor=#000000;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="280" y="235" width="770" height="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_user_orders_31" value="INV-2026061011" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="300" y="250" width="120" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_user_orders_32" value="10 Jun 2026" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="430" y="250" width="100" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_user_orders_33" value="Rp 170.000" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="550" y="250" width="120" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_user_orders_34" value="Selesai" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="690" y="250" width="150" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_user_orders_35" value="Detail" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontColor=#000000;fontSize=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="880" y="250" width="60" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_user_orders_36" value="" style="line;strokeWidth=1;html=1;strokeColor=#000000;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="280" y="285" width="770" height="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_user_orders_37" value="INV-2026052004" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="300" y="300" width="120" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_user_orders_38" value="20 Mei 2026" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="430" y="300" width="100" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_user_orders_39" value="Rp 370.000" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="550" y="300" width="120" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_user_orders_40" value="Di Proses" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="690" y="300" width="150" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_user_orders_41" value="Detail" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontColor=#000000;fontSize=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="880" y="300" width="60" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_user_orders_42" value="" style="line;strokeWidth=1;html=1;strokeColor=#000000;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="280" y="335" width="770" height="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_user_orders_43" value="" style="line;strokeWidth=1;html=1;strokeColor=#000000;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="0" y="740" width="1100" height="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_user_orders_44" value="© 2026 Kelompok Tani Desa BatuMekar - Madu MekarJaya. All Rights Reserved." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="750" width="600" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_user_orders_45" value="Teknologi Informasi - Universitas Mataram" style="text;html=1;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="850" y="750" width="200" height="30" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="65bd71144e">
+    <diagram id="page_tentang_desa" name="8_tentang_desa">
+        <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="800" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="web_frame" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontColor=#000000;align=center;verticalAlign=top;pointerEvents=0;" vertex="1" parent="1">
+                    <mxGeometry x="0" y="0" width="1100" height="800" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_tentang_desa_1" value="" style="line;strokeWidth=1;html=1;strokeColor=#000000;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="0" y="60" width="1100" height="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_tentang_desa_2" value="Madu MekarJaya" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="15" width="150" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_tentang_desa_3" value="Beranda" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="250" y="15" width="76" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_tentang_desa_4" value="Katalog" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="330" y="15" width="76" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_tentang_desa_5" value="Kalender Panen" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="410" y="15" width="132" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_tentang_desa_6" value="Tentang Desa" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=12;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="520" y="15" width="116" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_tentang_desa_7" value="Blog" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="620" y="15" width="52" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_tentang_desa_8" value="Hubungi Kami" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="680" y="15" width="116" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_tentang_desa_9" value="Bantuan" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="785" y="15" width="76" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_tentang_desa_10" value="[Icon] Keranjang (2)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontColor=#000000;fontSize=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="880" y="15" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_tentang_desa_11" value="[Icon] Akun" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontColor=#000000;fontSize=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="1000" y="15" width="70" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_tentang_desa_12" value="Profil Desa BatuMekar &amp; Kelompok Madu MekarJaya" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="80" width="600" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_tentang_desa_13" value="Desa BatuMekar berlokasi di wilayah perbukitan asri Kecamatan Lingsar, Lombok Barat. Dikelilingi hutan alam sekunder yang kaya akan keanekaragaman flora, khususnya pohon kaliandra, kelengkeng, dan aneka tanaman liar lainnya.&#10;&#10;Kelompok Tani MekarJaya menginisiasi panen madu hutan lestari guna memberdayakan ekonomi warga desa tanpa merusak habitat lebah hutan (Apis Dorsata). Kami menggunakan sistem panen tradisional ramah lingkungan yang menjaga populasi lebah tetap berkelanjutan." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="130" width="550" height="260" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_tentang_desa_14" value="[ Gambar Lanskap Desa BatuMekar &amp; Sarang Lebah ]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontColor=#000000;fontSize=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="630" y="130" width="420" height="240" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_tentang_desa_15" value="VISI &amp; MISI MEKARJAYA" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontColor=#000000;fontSize=12;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="410" width="1000" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_tentang_desa_16" value="Visi kami adalah menjadi penyedia madu hutan asli berkualitas premium dan menjadi model pelopor pelestarian hutan lebah lokal NTB.&#10;&#10;Misi:&#10;1. Menyediakan madu murni berkualitas tinggi tanpa proses kimiawi.&#10;2. Memberdayakan kelompok tani lokal Desa BatuMekar secara berkelanjutan.&#10;3. Mengedukasi masyarakat mengenai pentingnya melestarikan hutan lindung." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="70" y="430" width="960" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_tentang_desa_17" value="Anggota Inti Kelompok Tani MekarJaya" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="580" width="400" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_tentang_desa_18" value="[Foto Wayan]&#10;Pak Wayan&#10;Kepala Pemanen Hutan" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontColor=#000000;fontSize=12;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="610" width="310" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_tentang_desa_19" value="[Foto Ketut]&#10;Ibu Ketut&#10;QC &amp; Pengemasan" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontColor=#000000;fontSize=12;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+                    <mxGeometry x="395" y="610" width="310" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_tentang_desa_20" value="[Foto Nyoman]&#10;Pak Nyoman&#10;Logistik &amp; Penjualan" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontColor=#000000;fontSize=12;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+                    <mxGeometry x="740" y="610" width="310" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_tentang_desa_21" value="" style="line;strokeWidth=1;html=1;strokeColor=#000000;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="0" y="740" width="1100" height="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_tentang_desa_22" value="© 2026 Kelompok Tani Desa BatuMekar - Madu MekarJaya. All Rights Reserved." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="750" width="600" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_tentang_desa_23" value="Teknologi Informasi - Universitas Mataram" style="text;html=1;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="850" y="750" width="200" height="30" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

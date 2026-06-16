@@ -42,7 +42,7 @@ require_once 'includes/header.php';
                         </div>
                         <div>
                             <p style="margin-bottom: 4px; font-weight: 700; color: var(--secondary);">Visit Us</p>
-                            <p style="margin: 0; font-size: 16px; line-height: 1.5;">BatuMekar Village, Klungkung, Bali</p>
+                            <p style="margin: 0; font-size: 16px; line-height: 1.5;">Desa BatuMekar, Narmada, Lombok Barat</p>
                         </div>
                     </div>
                 </div>

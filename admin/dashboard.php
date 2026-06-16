@@ -72,6 +72,10 @@ require_once __DIR__ . '/../includes/header.php';
                         <span style="margin-left: auto; background: #ef4444; color: white; font-size: 10px; padding: 2px 8px; border-radius: 20px; font-weight: 700;"><?php echo $pending_count; ?></span>
                     <?php endif; ?>
                 </a>
+                <a href="artikel.php" class="sidebar-link">
+                    <span class="material-symbols-outlined">article</span>
+                    Artikel
+                </a>
                 <a href="../katalog.php" class="sidebar-link">
                     <span class="material-symbols-outlined">storefront</span>
                     Lihat Toko

@@ -43,19 +43,40 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
     $gambar = '';
 
     // Handle image upload
-    if (isset($_FILES['gambar']) && $_FILES['gambar']['error'] === UPLOAD_ERR_OK) {
-        $file_tmp = $_FILES['gambar']['tmp_name'];
-        $file_name = $_FILES['gambar']['name'];
-        $file_ext = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
-        $allowed_exts = ['jpg', 'jpeg', 'png', 'webp'];
-        if (in_array($file_ext, $allowed_exts)) {
-            $upload_dir = __DIR__ . '/../assets/uploads/produk/';
-            if (!file_exists($upload_dir)) {
-                mkdir($upload_dir, 0755, true);
+    if (isset($_FILES['gambar']) && $_FILES['gambar']['error'] !== UPLOAD_ERR_NO_FILE) {
+        if ($_FILES['gambar']['error'] !== UPLOAD_ERR_OK) {
+            $upload_errors = [
+                UPLOAD_ERR_INI_SIZE => 'Ukuran file melebihi batas server.',
+                UPLOAD_ERR_FORM_SIZE => 'Ukuran file terlalu besar.',
+                UPLOAD_ERR_PARTIAL => 'File hanya terupload sebagian.',
+                UPLOAD_ERR_NO_FILE => '',
+                UPLOAD_ERR_NO_TMP_DIR => 'Folder temporary tidak ditemukan.',
+                UPLOAD_ERR_CANT_WRITE => 'Gagal menulis file ke disk.',
+            ];
+            $error = 'Upload gagal: ' . ($upload_errors[$_FILES['gambar']['error']] ?? 'Error tidak diketahui.');
+        } else {
+            $file_tmp = $_FILES['gambar']['tmp_name'];
+            $file_name = $_FILES['gambar']['name'];
+            $file_size = $_FILES['gambar']['size'];
+            $file_ext = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+            $allowed_exts = ['jpg', 'jpeg', 'png', 'webp'];
+
+            if (!in_array($file_ext, $allowed_exts)) {
+                $error = 'Format file tidak didukung. Gunakan JPG, PNG, atau WebP.';
+            } elseif ($file_size > 2 * 1024 * 1024) {
+                $error = 'Ukuran file maksimal 2MB.';
+            } else {
+                $upload_dir = __DIR__ . '/../assets/uploads/produk/';
+                if (!file_exists($upload_dir)) {
+                    mkdir($upload_dir, 0755, true);
+                }
+                $new_file_name = 'produk_' . time() . '_' . rand(100, 999) . '.' . $file_ext;
+                if (move_uploaded_file($file_tmp, $upload_dir . $new_file_name)) {
+                    $gambar = 'assets/uploads/produk/' . $new_file_name;
+                } else {
+                    $error = 'Gagal menyimpan file. Coba lagi.';
+                }
             }
-            $new_file_name = 'produk_' . time() . '_' . rand(100, 999) . '.' . $file_ext;
-            move_uploaded_file($file_tmp, $upload_dir . $new_file_name);
-            $gambar = 'assets/uploads/produk/' . $new_file_name;
         }
     }
 
@@ -225,10 +246,19 @@ require_once __DIR__ . '/../includes/header.php';
                         </div>
                         <div class="form-group">
                             <label for="gambar">Gambar Produk</label>
-                            <input type="file" id="gambar" name="gambar" class="form-control" accept="image/*" <?php echo $edit_product ? '' : ''; ?>>
-                            <?php if ($edit_product && $edit_product['gambar']): ?>
-                                <div style="margin-top: 8px; font-size: 12px; color: #64748b;">Biarkan kosong jika tidak ingin mengubah gambar.</div>
-                            <?php endif; ?>
+                            <input type="file" id="gambar" name="gambar" class="form-control" accept="image/*" onchange="previewImage(event)">
+                            <div id="preview-container" style="margin-top: 10px;">
+                                <?php if ($edit_product && $edit_product['gambar']): ?>
+                                    <div style="display: flex; align-items: center; gap: 12px; padding: 8px 12px; background: #f8fafc; border-radius: 8px; border: 1px solid #e2e8f0;">
+                                        <img src="<?php echo e($edit_product['gambar']); ?>" style="width: 60px; height: 60px; object-fit: cover; border-radius: 6px; border: 1px solid #e2e8f0;">
+                                        <div>
+                                            <div style="font-size: 13px; font-weight: 600; color: #334155;">Gambar saat ini</div>
+                                            <div style="font-size: 11px; color: #94a3b8;">Kosongkan jika tidak ingin mengubah</div>
+                                        </div>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
+                            <div style="margin-top: 6px; font-size: 12px; color: #94a3b8;">Format: JPG, PNG, WebP. Maks 2MB.</div>
                         </div>
                         <div class="form-group">
                             <label style="display: flex; align-items: center; gap: 8px; margin-top: 32px;">
@@ -337,4 +367,16 @@ require_once __DIR__ . '/../includes/header.php';
         </section>
     </div>
 </main>
+<script>
+function previewImage(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        const container = document.getElementById('preview-container');
+        container.innerHTML = '<div style="display: flex; align-items: center; gap: 12px; padding: 8px 12px; background: #f0fdf4; border-radius: 8px; border: 1px solid #bbf7d0;"><img src="' + e.target.result + '" style="width: 60px; height: 60px; object-fit: cover; border-radius: 6px; border: 1px solid #e2e8f0;"><div><div style="font-size: 13px; font-weight: 600; color: #166534;">Gambar baru</div><div style="font-size: 11px; color: #64748b;">' + file.name + ' (' + (file.size/1024).toFixed(1) + ' KB)</div></div></div>';
+    };
+    reader.readAsDataURL(file);
+}
+</script>
 <?php require_once __DIR__ . '/../includes/footer.php'; ?>

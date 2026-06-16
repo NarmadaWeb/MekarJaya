@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="65bd71144e">
+    <diagram id="page_admin_dashboard" name="19_admin_dashboard">
+        <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="800" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="web_frame" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;fontColor=#000000;align=center;verticalAlign=top;pointerEvents=0;" vertex="1" parent="1">
+                    <mxGeometry x="0" y="0" width="1100" height="800" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_admin_dashboard_1" value="" style="line;strokeWidth=1;html=1;strokeColor=#000000;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="0" y="60" width="1100" height="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_admin_dashboard_2" value="Panel Admin MekarJaya" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="15" width="250" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_admin_dashboard_3" value="Lihat Toko" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontColor=#000000;fontSize=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="850" y="15" width="100" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_admin_dashboard_4" value="Keluar" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=12;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="960" y="15" width="90" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_admin_dashboard_5" value="MENU ADMIN" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontColor=#000000;fontSize=12;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="100" width="200" height="240" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_admin_dashboard_6" value="Dashboard" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=12;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="60" y="120" width="180" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_admin_dashboard_7" value="Kelola Produk" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="60" y="155" width="180" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_admin_dashboard_8" value="Kelola Kategori" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="60" y="190" width="180" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_admin_dashboard_9" value="Kelola Pesanan" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="60" y="225" width="180" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_admin_dashboard_10" value="Kelola Artikel" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="60" y="260" width="180" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_admin_dashboard_11" value="DASHBOARD ADMINISTRATOR" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontColor=#000000;fontSize=12;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+                    <mxGeometry x="280" y="100" width="770" height="500" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_admin_dashboard_12" value="Overview Penjualan &amp; Aktivitas" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="300" y="120" width="400" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_admin_dashboard_13" value="TOTAL PENDAPATAN&#10;&#10;Rp 12.450.000" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontColor=#000000;fontSize=12;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+                    <mxGeometry x="300" y="160" width="220" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_admin_dashboard_14" value="PESANAN MASUK&#10;&#10;3 Baru / Pending" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontColor=#000000;fontSize=12;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+                    <mxGeometry x="545" y="160" width="220" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_admin_dashboard_15" value="JUMLAH PRODUK&#10;&#10;12 Madu Aktif" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontColor=#000000;fontSize=12;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+                    <mxGeometry x="790" y="160" width="220" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_admin_dashboard_16" value="Pesanan Terbaru Masuk:" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+                    <mxGeometry x="300" y="280" width="300" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_admin_dashboard_17" value="Invoice | Pelanggan | Grand Total | Status | Aksi&#10;#INV-001 | Indra | Rp 305.245 | Belum Bayar | [Detail]&#10;#INV-002 | Siti | Rp 170.000 | Sudah Bayar | [Proses]&#10;#INV-003 | Budi | Rp 370.000 | Di Proses | [Selesai]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;fontColor=#000000;fontSize=12;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;spacingTop=6;spacingBottom=6;" vertex="1" parent="1">
+                    <mxGeometry x="300" y="310" width="710" height="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_admin_dashboard_18" value="" style="line;strokeWidth=1;html=1;strokeColor=#000000;align=center;verticalAlign=middle;" vertex="1" parent="1">
+                    <mxGeometry x="0" y="740" width="1100" height="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_admin_dashboard_19" value="© 2026 Kelompok Tani Desa BatuMekar - Madu MekarJaya. All Rights Reserved." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="750" width="600" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="elem_page_admin_dashboard_20" value="Teknologi Informasi - Universitas Mataram" style="text;html=1;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="850" y="750" width="200" height="30" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

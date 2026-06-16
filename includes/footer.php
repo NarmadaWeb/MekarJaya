@@ -1,8 +1,18 @@
+<?php
+$current_page = basename($_SERVER['PHP_SELF']);
+$prefix = (str_starts_with($_SERVER['PHP_SELF'], '/account/') || str_starts_with($_SERVER['PHP_SELF'], '/admin/') || str_starts_with($_SERVER['PHP_SELF'], '/reseller/')) ? '../' : '';
+function footer_link($href, $icon, $label) {
+    global $current_page, $prefix;
+    $active = basename($href) === $current_page;
+    $style = $active ? 'color: var(--primary-container); font-weight: 600;' : '';
+    return '<a href="' . $prefix . $href . '" style="' . $style . '"><span class="material-symbols-outlined">' . $icon . '</span> ' . $label . '</a>';
+}
+?>
 <!-- Footer -->
 <footer class="site-footer">
     <div class="container footer-grid">
         <div class="footer-col footer-brand">
-            <a href="index.php" class="footer-logo">BatuMekar</a>
+            <a href="<?php echo $prefix; ?>index.php" class="footer-logo">BatuMekar</a>
             <p style="color: #b0a79a; line-height: 1.6; margin: 0;">Bringing the golden warmth of the village to your home, one jar of pure artisanal honey at a time.</p>
             <div class="footer-socials">
                 <a href="#" class="social-icon" aria-label="Facebook">
@@ -19,24 +29,24 @@
         <div class="footer-col">
             <h4>Village</h4>
             <ul class="footer-links">
-                <li><a href="tentang-desa.php"><span class="material-symbols-outlined">info</span> About Our Story</a></li>
-                <li><a href="#"><span class="material-symbols-outlined">calendar_today</span> Harvest Calendar</a></li>
-                <li><a href="#"><span class="material-symbols-outlined">eco</span> Sustainability</a></li>
+                <li><?php echo footer_link('tentang-desa.php', 'info', 'About Our Story'); ?></li>
+                <li><?php echo footer_link('kalender-panen.php', 'calendar_today', 'Kalender Panen'); ?></li>
+                <li><?php echo footer_link('keberlanjutan.php', 'eco', 'Keberlanjutan'); ?></li>
             </ul>
         </div>
         <div class="footer-col">
             <h4>Support</h4>
             <ul class="footer-links">
-                <li><a href="bantuan.php" style="color: var(--primary-container); font-weight: 600;"><span class="material-symbols-outlined">help</span> Help Center</a></li>
-                <li><a href="#"><span class="material-symbols-outlined">local_shipping</span> Shipping Policy</a></li>
-                <li><a href="#"><span class="material-symbols-outlined">gavel</span> Terms of Service</a></li>
+                <li><?php echo footer_link('bantuan.php', 'help', 'Help Center'); ?></li>
+                <li><?php echo footer_link('kebijakan-pengiriman.php', 'local_shipping', 'Kebijakan Pengiriman'); ?></li>
+                <li><?php echo footer_link('syarat-ketentuan.php', 'gavel', 'Syarat & Ketentuan'); ?></li>
             </ul>
         </div>
         <div class="footer-col">
             <h4>Connect</h4>
             <ul class="footer-links">
-                <li><a href="kontak.php"><span class="material-symbols-outlined">mail</span> Contact Us</a></li>
-                <li><a href="reseller/dashboard.php"><span class="material-symbols-outlined">storefront</span> Wholesale Portal</a></li>
+                <li><?php echo footer_link('kontak.php', 'mail', 'Contact Us'); ?></li>
+                <li><?php echo footer_link('reseller/dashboard.php', 'storefront', 'Wholesale Portal'); ?></li>
             </ul>
         </div>
     </div>
@@ -50,12 +60,10 @@
         const item = element.parentElement;
         const isActive = item.classList.contains('active');
 
-        // Close all items
         document.querySelectorAll('.accordion-item').forEach(el => {
             el.classList.remove('active');
         });
 
-        // Toggle clicked item
         if (!isActive) {
             item.classList.add('active');
         }
@@ -63,4 +71,3 @@
 </script>
 </body>
 </html>
-
