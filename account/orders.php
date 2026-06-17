@@ -142,7 +142,7 @@ require_once __DIR__ . '/../includes/header.php';
                                     <div class="order-item-row" style="display: flex; justify-content: space-between; align-items: center; gap: 16px;">
                                         <div class="order-item-info" style="display: flex; align-items: center; gap: 12px;">
                                             <?php if (!empty($item['product_image'])): ?>
-                                                <img src="<?php echo e($item['product_image']); ?>" alt="<?php echo e($item['product_name']); ?>" class="order-item-img" style="width: 45px; height: 45px; object-fit: cover; border-radius: 6px; border: 1px solid #cbd5e1;">
+                                                <img src="<?php echo e(img_url($item['product_image'])); ?>" alt="<?php echo e($item['product_name']); ?>" class="order-item-img" style="width: 45px; height: 45px; object-fit: cover; border-radius: 6px; border: 1px solid #cbd5e1;">
                                             <?php endif; ?>
                                             <div>
                                                 <div style="font-weight: 600; color: var(--on-surface); font-size: 14px;"><?php echo e($item['product_name']); ?></div>

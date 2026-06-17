@@ -102,9 +102,7 @@ if ($search) {
                             </div>
                             <?php endif; ?>
                             <p class="text-primary" style="font-weight: 700; margin: 8px 0;"><?php echo e(format_rupiah($product['harga'])); ?></p>
-                            <form action="produk.php?id=<?php echo e($product['produk_id']); ?>" method="GET">
-                                <button type="submit" class="btn btn-primary" style="width: 100%;">Lihat & Pilih Ukuran</button>
-                            </form>
+                            <a href="produk.php?id=<?php echo e($product['produk_id']); ?>" class="btn btn-primary" style="width: 100%; text-decoration: none; display: flex; justify-content: center;">Lihat & Pilih Ukuran</a>
                         </div>
                     </div>
                     <?php endforeach; ?>

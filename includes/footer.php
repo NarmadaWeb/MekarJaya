@@ -56,6 +56,17 @@ function footer_link($href, $icon, $label) {
     </div>
 </footer>
 <script>
+    function togglePassword(id, btn) {
+        const input = document.getElementById(id);
+        const icon = btn.querySelector('.material-symbols-outlined');
+        if (input.type === 'password') {
+            input.type = 'text';
+            icon.textContent = 'visibility_off';
+        } else {
+            input.type = 'password';
+            icon.textContent = 'visibility';
+        }
+    }
     function toggleAccordion(element) {
         const item = element.parentElement;
         const isActive = item.classList.contains('active');

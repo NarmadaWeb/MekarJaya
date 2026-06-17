@@ -18,7 +18,7 @@ $posts = get_all_blog_posts($pdo);
                     </div>
                     <h3 style="margin-bottom: 12px;"><?php echo e($post['judul']); ?></h3>
                     <p style="color: var(--on-surface-variant); font-size: 14px; margin-bottom: 16px;"><?php echo e($post['kutipan']); ?></p>
-                    <a href="#" style="color: var(--primary); font-weight: 700; font-size: 14px;">Baca Selengkapnya →</a>
+                    <a href="blog-detail.php?id=<?php echo e($post['artikel_id']); ?>" style="color: var(--primary); font-weight: 700; font-size: 14px;">Baca Selengkapnya →</a>
                 </div>
             </article>
             <?php endforeach; ?>

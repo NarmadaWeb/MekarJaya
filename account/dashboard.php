@@ -44,6 +44,12 @@ require_once __DIR__ . '/../includes/header.php';
                     <span class="material-symbols-outlined">person</span>
                     Profil Saya
                 </a>
+                <?php if (isset($_SESSION['user_role']) && $_SESSION['user_role'] === 'admin'): ?>
+                <a href="../admin/dashboard.php" class="sidebar-link" style="color: var(--primary) !important;">
+                    <span class="material-symbols-outlined" style="color: var(--primary) !important;">admin_panel_settings</span>
+                    Panel Admin
+                </a>
+                <?php endif; ?>
                 <a href="../logout.php" class="sidebar-link" style="color: var(--error) !important;">
                     <span class="material-symbols-outlined" style="color: var(--error) !important;">logout</span>
                     Keluar
@@ -129,6 +135,11 @@ require_once __DIR__ . '/../includes/header.php';
                             <a href="profile.php" class="btn btn-secondary" style="justify-content: center; font-size: 14px; padding: 12px 20px; border-color: var(--primary); color: var(--primary); text-decoration: none;">
                                 <span class="material-symbols-outlined" style="font-size: 18px;">manage_accounts</span> Ubah Informasi Profil
                             </a>
+                            <?php if (isset($_SESSION['user_role']) && $_SESSION['user_role'] === 'admin'): ?>
+                            <a href="../admin/dashboard.php" class="btn" style="justify-content: center; font-size: 14px; padding: 12px 20px; text-decoration: none; background: #1d2b4f; color: white; border: none; display: flex; align-items: center; gap: 8px; border-radius: 8px; font-weight: 600;">
+                                <span class="material-symbols-outlined" style="font-size: 18px;">admin_panel_settings</span> Buka Panel Admin
+                            </a>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>

@@ -91,7 +91,9 @@ foreach ($orders as $order) {
         JOIN produk p ON oi.produk_id = p.produk_id
         WHERE oi.pesanan_id = ?
     ");
-    // Add size info
+    $stmt_items->execute([$order['pesanan_id']]);
+    $order['items'] = $stmt_items->fetchAll();
+    // Add size info to items
     foreach ($order['items'] as &$item) {
         $size_label = '';
         if (!empty($item['ukuran_id'])) {
@@ -101,8 +103,6 @@ foreach ($orders as $order) {
         $item['ukuran_label'] = $size_label;
     }
     unset($item);
-    $stmt_items->execute([$order['pesanan_id']]);
-    $order['items'] = $stmt_items->fetchAll();
     $orders_with_items[] = $order;
 }
 $orders = $orders_with_items;
@@ -297,7 +297,7 @@ require_once __DIR__ . '/../includes/header.php';
                                 <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #f1f5f9;">
                                     <div style="display: flex; align-items: center; gap: 12px;">
                                         <?php if (!empty($item['product_image'])): ?>
-                                            <img src="<?php echo e($item['product_image']); ?>" alt="<?php echo e($item['product_name']); ?>" style="width: 40px; height: 40px; object-fit: cover; border-radius: 6px; border: 1px solid #e2e8f0;">
+                                            <img src="<?php echo e(img_url($item['product_image'])); ?>" alt="<?php echo e($item['product_name']); ?>" style="width: 40px; height: 40px; object-fit: cover; border-radius: 6px; border: 1px solid #e2e8f0;">
                                         <?php endif; ?>
                                         <div>
                                             <div style="font-weight: 600; color: #334155; font-size: 14px;"><?php echo e($item['product_name']); ?></div>

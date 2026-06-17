@@ -67,7 +67,12 @@ require_once 'includes/header.php';
                 
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" id="password" name="password" class="form-control" placeholder="••••••••" required>
+                    <div style="position: relative;">
+                        <input type="password" id="password" name="password" class="form-control" placeholder="••••••••" required style="padding-right: 44px;">
+                        <button type="button" onclick="togglePassword('password', this)" style="position: absolute; right: 0; top: 0; bottom: 0; width: 44px; background: none; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; color: #94a3b8;">
+                            <span class="material-symbols-outlined" style="font-size: 20px;">visibility</span>
+                        </button>
+                    </div>
                 </div>
 
                 <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px; margin-top: 16px; justify-content: center; font-size: 15px;">

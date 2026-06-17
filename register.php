@@ -87,11 +87,21 @@ require_once 'includes/header.php';
                 <div class="grid grid-2" style="gap: 16px; margin-bottom: 8px;">
                     <div class="form-group" style="margin: 0;">
                         <label for="password">Password *</label>
-                        <input type="password" id="password" name="password" class="form-control" placeholder="Min 6 karakter" required>
+                        <div style="position: relative;">
+                            <input type="password" id="password" name="password" class="form-control" placeholder="Min 6 karakter" required style="padding-right: 44px;">
+                            <button type="button" onclick="togglePassword('password', this)" style="position: absolute; right: 0; top: 0; bottom: 0; width: 44px; background: none; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; color: #94a3b8;">
+                                <span class="material-symbols-outlined" style="font-size: 20px;">visibility</span>
+                            </button>
+                        </div>
                     </div>
                     <div class="form-group" style="margin: 0;">
                         <label for="password_confirm">Konfirmasi Password *</label>
-                        <input type="password" id="password_confirm" name="password_confirm" class="form-control" placeholder="Ulangi password" required>
+                        <div style="position: relative;">
+                            <input type="password" id="password_confirm" name="password_confirm" class="form-control" placeholder="Ulangi password" required style="padding-right: 44px;">
+                            <button type="button" onclick="togglePassword('password_confirm', this)" style="position: absolute; right: 0; top: 0; bottom: 0; width: 44px; background: none; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; color: #94a3b8;">
+                                <span class="material-symbols-outlined" style="font-size: 20px;">visibility</span>
+                            </button>
+                        </div>
                     </div>
                 </div>
 

@@ -113,7 +113,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
                     }
                     $new_file_name = 'produk_' . time() . '_' . rand(100, 999) . '.' . $file_ext;
                     if (move_uploaded_file($file_tmp, $upload_dir . $new_file_name)) {
-                        $gambar = 'assets/uploads/produk/' . $new_file_name;
+                        $gambar = '/assets/uploads/produk/' . $new_file_name;
                     } else {
                         $error = 'Gagal menyimpan file. Coba lagi.';
                     }
@@ -152,7 +152,7 @@ $total_products = count($products);
 $out_of_stock = $pdo->query("SELECT COUNT(*) FROM produk WHERE stok <= 0")->fetchColumn();
 
 // Get categories for dropdown
-$categories = $pdo->query("SELECT DISTINCT kategori FROM produk WHERE kategori IS NOT NULL AND kategori != '' ORDER BY kategori")->fetchAll(PDO::FETCH_COLUMN);
+$categories = $pdo->query("SELECT nama_kategori FROM kategori ORDER BY nama_kategori")->fetchAll(PDO::FETCH_COLUMN);
 
 // If editing, load product
 $edit_product = null;
@@ -278,15 +278,12 @@ require_once __DIR__ . '/../includes/header.php';
                             <label for="kategori">Kategori</label>
                             <select id="kategori" name="kategori" class="form-control" required>
                                 <option value="">-- Pilih Kategori --</option>
-                                <?php foreach ($categories as $cat): ?>
+                                <?php if (!empty($categories)): ?>
+                                    <?php foreach ($categories as $cat): ?>
                                     <option value="<?php echo e($cat); ?>" <?php echo ($edit_product && $edit_product['kategori'] === $cat) ? 'selected' : ''; ?>><?php echo e($cat); ?></option>
-                                <?php endforeach; ?>
-                                <?php if (empty($categories)): ?>
-                                    <option value="Multiflora">Multiflora</option>
-                                    <option value="Kaliandra">Kaliandra</option>
-                                    <option value="Hutan">Hutan</option>
-                                    <option value="Kelengkeng">Kelengkeng</option>
-                                    <option value="Rambutan">Rambutan</option>
+                                    <?php endforeach; ?>
+                                <?php else: ?>
+                                    <option value="" disabled style="color:#94a3b8;">Belum ada kategori. Buat di menu Kategori.</option>
                                 <?php endif; ?>
                             </select>
                         </div>
@@ -300,7 +297,7 @@ require_once __DIR__ . '/../includes/header.php';
                             <div id="preview-container" style="margin-top: 10px;">
                                 <?php if ($edit_product && $edit_product['gambar']): ?>
                                     <div style="display: flex; align-items: center; gap: 12px; padding: 8px 12px; background: #f8fafc; border-radius: 8px; border: 1px solid #e2e8f0;">
-                                        <img src="<?php echo e($edit_product['gambar']); ?>" style="width: 60px; height: 60px; object-fit: cover; border-radius: 6px; border: 1px solid #e2e8f0;">
+                                        <img src="<?php echo e(img_url($edit_product['gambar'])); ?>" style="width: 60px; height: 60px; object-fit: cover; border-radius: 6px; border: 1px solid #e2e8f0;">
                                         <div>
                                             <div style="font-size: 13px; font-weight: 600; color: #334155;">Gambar saat ini</div>
                                             <div style="font-size: 11px; color: #94a3b8;">Kosongkan jika tidak ingin mengubah</div>
@@ -433,7 +430,7 @@ require_once __DIR__ . '/../includes/header.php';
                             <tr style="border-bottom: 1px solid #f1f5f9; transition: background 0.2s;">
                                 <td style="padding: 12px 20px;">
                                     <?php if ($p['gambar']): ?>
-                                        <img src="<?php echo e($p['gambar']); ?>" alt="<?php echo e($p['nama']); ?>" style="width: 50px; height: 50px; object-fit: cover; border-radius: 8px; border: 1px solid #e2e8f0;">
+                                        <img src="<?php echo e(img_url($p['gambar'])); ?>" alt="<?php echo e($p['nama']); ?>" style="width: 50px; height: 50px; object-fit: cover; border-radius: 8px; border: 1px solid #e2e8f0;">
                                     <?php else: ?>
                                         <div style="width: 50px; height: 50px; background: #f1f5f9; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
                                             <span class="material-symbols-outlined" style="color: #94a3b8; font-size: 20px;">image</span>

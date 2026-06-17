@@ -69,6 +69,12 @@ function get_all_blog_posts($pdo) {
     return $pdo->query("SELECT * FROM artikel ORDER BY dibuat_pada DESC")->fetchAll();
 }
 
+function img_url($path) {
+    if (!$path) return '';
+    if (str_starts_with($path, '/') || str_starts_with($path, 'http')) return $path;
+    return '../' . $path;
+}
+
 function ensure_size_table($pdo) {
     try {
         $pdo->exec("CREATE TABLE IF NOT EXISTS ukuran_produk (
