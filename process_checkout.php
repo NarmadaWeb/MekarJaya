@@ -142,7 +142,9 @@ try {
     exit;
 
 } catch (Exception $e) {
-    $pdo->rollBack();
+    if ($pdo->inTransaction()) {
+        $pdo->rollBack();
+    }
     die("Error processing order: " . $e->getMessage());
 }
 ?>
