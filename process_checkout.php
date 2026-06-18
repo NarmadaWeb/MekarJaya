@@ -36,6 +36,20 @@ $shipping_cost = 25000;
 $admin_fee = 2000;
 $grand_total = $subtotal + $shipping_cost + $admin_fee;
 
+// Ensure tables/columns exist before transaction (DDL auto-commits in MySQL)
+try { $pdo->exec("ALTER TABLE detail_pesanan ADD COLUMN ukuran_id INTEGER DEFAULT NULL"); } catch (PDOException $e) {}
+try { $pdo->exec("ALTER TABLE pesanan ADD COLUMN snap_token TEXT DEFAULT NULL"); } catch (PDOException $e) {}
+try {
+    $pdo->exec("CREATE TABLE IF NOT EXISTS notifikasi (
+        notifikasi_id INTEGER PRIMARY KEY AUTOINCREMENT,
+        pesanan_id INTEGER DEFAULT NULL,
+        judul TEXT NOT NULL,
+        pesan TEXT DEFAULT NULL,
+        dibaca INTEGER DEFAULT 0,
+        dibuat_pada TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    )");
+} catch (PDOException $e) {}
+
 try {
     $pdo->beginTransaction();
 
@@ -47,32 +61,19 @@ try {
     $order_id = $pdo->lastInsertId();
 
     // Insert Order Items
-    try {
-        $pdo->exec("ALTER TABLE detail_pesanan ADD COLUMN ukuran_id INTEGER DEFAULT NULL");
-    } catch (PDOException $e) {}
     $stmt = $pdo->prepare("INSERT INTO detail_pesanan (pesanan_id, produk_id, ukuran_id, jumlah, harga) VALUES (?, ?, ?, ?, ?)");
     foreach ($items_to_save as $item) {
         $ukuran_id = !empty($item['ukuran_id']) ? $item['ukuran_id'] : null;
         $stmt->execute([$order_id, $item['product_id'], $ukuran_id, $item['quantity'], $item['price']]);
     }
 
-    // Create notification for admin
-    try {
-        $pdo->exec("CREATE TABLE IF NOT EXISTS notifikasi (
-            notifikasi_id INTEGER PRIMARY KEY AUTOINCREMENT,
-            pesanan_id INTEGER DEFAULT NULL,
-            judul TEXT NOT NULL,
-            pesan TEXT DEFAULT NULL,
-            dibaca INTEGER DEFAULT 0,
-            dibuat_pada TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-        )");
-        $stmt_notif = $pdo->prepare("INSERT INTO notifikasi (pesanan_id, judul, pesan) VALUES (?, ?, ?)");
-        $stmt_notif->execute([
-            $order_id,
-            'Pesanan Baru #MBM-' . $order_id,
-            'Pesanan baru senilai ' . format_rupiah($grand_total) . ' dari ' . e($name) . ' (' . e($payment_method) . ')'
-        ]);
-    } catch (Exception $e) {}
+    // Create notification
+    $stmt_notif = $pdo->prepare("INSERT INTO notifikasi (pesanan_id, judul, pesan) VALUES (?, ?, ?)");
+    $stmt_notif->execute([
+        $order_id,
+        'Pesanan Baru #MBM-' . $order_id,
+        'Pesanan baru senilai ' . format_rupiah($grand_total) . ' dari ' . e($name) . ' (' . e($payment_method) . ')'
+    ]);
 
     $pdo->commit();
 
@@ -126,9 +127,6 @@ try {
         $snap_result = midtrans_get_snap_token($order_id, $grand_total, $midtrans_items, $customer, $finish_url);
 
         if ($snap_result && isset($snap_result['token'])) {
-            try {
-                $pdo->exec("ALTER TABLE pesanan ADD COLUMN snap_token TEXT DEFAULT NULL");
-            } catch (PDOException $e) {}
             $stmt = $pdo->prepare("UPDATE pesanan SET snap_token = ? WHERE pesanan_id = ?");
             $stmt->execute([$snap_result['token'], $order_id]);
         }
